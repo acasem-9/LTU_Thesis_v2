@@ -9,3 +9,9 @@ data/train/labels/*txt
 
 data/val/images/*png
 data/val/labels/*txt
+
+submit/submit_cnet/*out
+submit/submit_cnet/*err
+
+submit/submit_dnet/*out
+submit/submit_dnet/*err
