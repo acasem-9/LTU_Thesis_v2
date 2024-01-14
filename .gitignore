@@ -15,3 +15,7 @@ submit/submit_cnet/*err
 
 submit/submit_dnet/*out
 submit/submit_dnet/*err
+
+submit/submit_cnet/old/
+submit/submit_dnet/old/
+
