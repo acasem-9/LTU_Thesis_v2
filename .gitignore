@@ -1,1 +1,11 @@
-# 
+
+__pycache__/
+
+# data/test/images/*.png
+# data/test/labels*.txt
+
+# data/train/images/*png
+# data/train/labels/*txt
+
+# data/val/images/*png
+# data/val/labels/*txt
