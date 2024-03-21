@@ -10,6 +10,10 @@ data/train/labels/*txt
 data/val/images/*png
 data/val/labels/*txt
 
+data/**
+
+data/raw/**
+
 submit/submit_cnet/*out
 submit/submit_cnet/*err
 
@@ -18,4 +22,6 @@ submit/submit_dnet/*err
 
 submit/submit_cnet/old/
 submit/submit_dnet/old/
+
+desktop.ini
 
