@@ -1,6 +1,6 @@
 
 """
-This script, analyze_character_classes.py, prompts the user for the path to the 'bangla_yolo_class_mapping.csv' file,
+This script prompts the user for the path to the 'bangla_yolo_class_mapping.csv' file,
 analyzes it to report on character class occurrences ('c' for consonants, independent vowels, and digits; 'd' for others),
 aggregated counts for each class, and the total count of characters. 
 

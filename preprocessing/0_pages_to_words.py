@@ -1,8 +1,17 @@
+"""
+This script extracts word images from page images (in TIF format) and generating corresponding label files with adjusted
+character coordinates.Then it takes input paths for 'pages' (containing TIF images) and 'pages_character_coordinates'
+(containing text files with character coordinates in the Boise State Bangla Dataset annotation), then processes each character 
+by grouping them into words, cropping these words from the page images, and saving the cropped word images and the new labels.
+"""
 import os
+import sys
 import pandas as pd
 from PIL import Image
 import re
 import concurrent.futures
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config_local import WORD_SEPARATED_DIR, DATA_DIR
 
 def remove_quotes(path):
     return re.sub(r'^[\'\"]|[\'\"]$', '', path)
@@ -36,13 +45,13 @@ def process_single_file(txt_file, coordinates_path, labels_path, images_path, pa
         min_y = group['y1'].min() - padding
         max_y = group['y2'].max() + padding
         
-        # Crop image based on calculated coordinates
+        # Crop image based on coordinates
         image_path = os.path.join(pages_path, f"{page_id}.tif")
         with Image.open(image_path) as img:
             cropped_img = img.crop((min_x, min_y, max_x, max_y))
             cropped_img.save(os.path.join(images_path, f"{page_id}_{word}.tif"))
         
-        # Adjust and save coordinates for each cropped image
+        # Adjust and save coordinates for each image 
         adjusted_coords = group.copy()
         adjusted_coords['x1'] -= min_x
         adjusted_coords['y1'] -= min_y
@@ -54,14 +63,30 @@ def process_single_file(txt_file, coordinates_path, labels_path, images_path, pa
                 file.write(line)
 
 def main():
-    output_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data/raw/word_separated'))
+    user_confirmation = input("Do you want to proceed with data refinement? (y/n): ")
+    if user_confirmation.lower() != 'y':
+        print("Operation cancelled by the user.")
+        sys.exit(1)
+    
+    raw_folder_path = os.path.join(DATA_DIR, 'raw')
+    if not os.path.exists(raw_folder_path):
+        print(f"The 'raw' folder does not exist within the specified data directory: {DATA_DIR}")
+        create_raw = input("Would you like to create it? (y/n): ").strip().lower()
+        if create_raw == 'y':
+            os.makedirs(raw_folder_path)
+            print("'raw' folder created.")
+        else:
+            print("The 'raw' folder is required to continue. Exiting script.")
+            sys.exit(1)
+    
+    output_path = WORD_SEPARATED_DIR
     pages_path, coordinates_path = prompt_for_paths()
     labels_path, images_path = create_output_structure(output_path)
 
     txt_files = [f for f in os.listdir(coordinates_path) if f.endswith('.txt')]
     args = [(f, coordinates_path, labels_path, images_path, pages_path) for f in txt_files]
     
-    print('running ... ')
+    print('Processing... ')
 
     with concurrent.futures.ProcessPoolExecutor() as executor:
         futures = [executor.submit(process_single_file, *arg) for arg in args]
