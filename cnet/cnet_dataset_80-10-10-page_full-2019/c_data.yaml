@@ -1,0 +1,74 @@
+path: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\c_data
+train: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\c_data\train\images
+val: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\c_data\validation\images
+test: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\c_data\test\images
+names:
+  0: 0985
+  1: 0986
+  2: 0987
+  3: 0988
+  4: 0989
+  5: 098A
+  6: 098F
+  7: 0990
+  8: 0993
+  9: 0994
+  10: 0995
+  11: 0996
+  12: 0997
+  13: 0998
+  14: 0999
+  15: 099A
+  16: 099B
+  17: 099C
+  18: 099D
+  19: 099F
+  20: 09A0
+  21: 09A1
+  22: 09A2
+  23: 09A3
+  24: 09A4
+  25: 09A5
+  26: 09A6
+  27: 09A7
+  28: 09A8
+  29: 09AA
+  30: 09AB
+  31: 09AC
+  32: 09AD
+  33: 09AE
+  34: 09AF
+  35: 09B0
+  36: 09B2
+  37: 09B6
+  38: 09B7
+  39: 09B8
+  40: 09B9
+  41: 09DC
+  42: 09DD
+  43: 09DF
+  44: 0982
+  45: 09CE
+  46: 002C
+  47: 007C
+  48: 002D
+  49: 09A8 09CD 09A6
+  50: 09B6 09CD 099A
+  51: 0999 09CD 0997
+  52: 09A7 09CD 09AC
+  53: 0997 09CD 09A7
+  54: 09B8 09CD 099F
+  55: 09B7 09CD 099F
+  56: 09B7 09CD 09AE
+  57: 09AA 09CD 09B2
+  58: 09A8 09CD 09A4
+  59: 09A8 09CD 09A8
+  60: 09A6 09CD 09AC
+  61: 0995 09CD 09B8
+  62: 0995 09CD 09B7
+  63: 09A4 09CD 09A4
+  64: 099F 09CD 099F
+  65: 09B7 09CD 09A3
+  66: 09A6 09CD 09A7
+  67: 09A8 09CD 09A1
+nc: 68

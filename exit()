@@ -1,0 +1,77 @@
+[33mcommit 0393bc486b79ebdb88572022c70b333c1a045610[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Fri Mar 29 11:29:21 2024 +0100
+
+    trainig and no net. weights
+
+[33mcommit 50fc12d0f817a5145788b643cfdcb9379aaf7f2d[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Fri Mar 29 11:19:18 2024 +0100
+
+    added cnet train
+
+[33mcommit c1c622a51cd7a0984977110b92156bd03f408d65[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Wed Mar 27 19:14:05 2024 +0100
+
+    config files added
+
+[33mcommit e2946356cc3a094b05fc19f16fa9d0bb615906c7[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Wed Mar 27 19:10:18 2024 +0100
+
+    preprocessing finished
+
+[33mcommit 0e4aca77c031c7fb359cc910da5cacdef6946d28[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Thu Mar 21 20:33:29 2024 +0100
+
+    late update
+
+[33mcommit adf7bb13bd3120f0520ffecf1c8673c87b2115f3[m
+Author: Carl <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 23:40:10 2024 +0100
+
+    Small change
+
+[33mcommit 87268f490f5b66abab61ad5d58997455f9b1bebd[m
+Author: Carl <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 23:33:43 2024 +0100
+
+    minor change
+
+[33mcommit 1bacc141956585e05521c00edba7a86bceb76c17[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 23:12:04 2024 +0100
+
+    updated gitignore
+
+[33mcommit 7a7a7e4d4dbd01272e60e97c42832fd1ccf21c87[m
+Author: Carl <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 23:08:48 2024 +0100
+
+    COSMOS submit sh cnet
+
+[33mcommit dbfc121c97a3212ee422394b0b57acdfad040c29[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 20:53:00 2024 +0100
+
+    Changes to folder structure
+
+[33mcommit 80fd620cb57c6580d24851d8ba17df87ea2e1a5d[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 20:51:29 2024 +0100
+
+    Changes to folder structure
+
+[33mcommit 245b5bc2dddc974f0340fa893dbe88071385ed24[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 20:48:36 2024 +0100
+
+    Changes to folder structure
+
+[33mcommit bb02bd146facce40706f5321fe425985c55e6d53[m
+Author: Carl S <acasem-9@student.ltu.se>
+Date:   Sun Jan 14 20:36:44 2024 +0100
+
+    Folder structure and train process for cnet

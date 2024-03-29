@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import config_bangla as bc
+import legacy.config_bangla as bc
 
 def hex_to_char(unicode_hex_list):
     """Convert hexadecimal unicode code points back to characters."""

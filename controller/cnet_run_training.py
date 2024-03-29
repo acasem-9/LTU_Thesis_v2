@@ -1,8 +1,10 @@
 import os
+import sys 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import subprocess
 from datetime import datetime
-import config_path as config_path
-import cnet_config as cnet_config
+import config_local as config_local
+import config_networks as config_networks
 
 def time_now():
     return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -10,8 +12,8 @@ def time_now():
 def main(network, model, dataset, num_classes, obj_per_class, epochs, batch): 
     
     output_folder_name = f'{network}_{model}_c{num_classes}_o{obj_per_class}_e{epochs}_b{batch}'
-    train_script_path = os.path.join(config_path.CNET, f'train_{network}.py')
-    output_folder_path = os.path.join(config_path.CNET, 'cnet_models', f'{output_folder_name}')
+    train_script_path = os.path.join(config_local.CNET, f'train_{network}.py')
+    output_folder_path = os.path.join(config_local.CNET, 'cnet_models', f'{output_folder_name}')
 
     if not os.path.exists(output_folder_path):
         os.makedirs(output_folder_path)
@@ -26,6 +28,6 @@ def main(network, model, dataset, num_classes, obj_per_class, epochs, batch):
    
 if __name__ == "__main__":
 
-    main(cnet_config.NETWORK, cnet_config.MODEL, cnet_config.DATASET, cnet_config.NUM_CLASSES, cnet_config.OBJ_PER_CLASS, cnet_config.EPOCHS, cnet_config.BATCH)
+    main(config_networks.NETWORK, config_networks.MODEL, config_networks.DATASET, config_networks.NUM_CLASSES, config_networks.OBJ_PER_CLASS, config_networks.EPOCHS, config_networks.BATCH)
 
 
