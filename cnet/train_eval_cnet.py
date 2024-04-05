@@ -89,10 +89,10 @@ def main():
     # Model parameters
     data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019', 'c_data.yaml'))
     project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019','yolov8m'))#'./yolov8m'
-    name='20230328_T1845'
-    yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8m.pt')
+    name='20240405_T1858'
+    yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8x.pt')
     #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
-    epochs=1
+    epochs=10
     batch=16
     patience=50
     device=0

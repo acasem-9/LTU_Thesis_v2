@@ -1,7 +1,7 @@
-path: ../../data/dataset_80-10-10-page_full-2019/d_data/
-train: train/images
-val: validation/images
-test: test/images
+path: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data
+train: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\train\images
+val: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\validation\images
+test: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\test\images
 names:
   0: 0981
   1: 09BE

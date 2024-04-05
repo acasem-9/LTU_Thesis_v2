@@ -40,4 +40,5 @@ yolov8m.pt
 yolov8l.pt
 yolov8x.pt
 
+exit()
 
