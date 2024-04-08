@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Job time (hh:mm:ss):
-#SBATCH -t 00:05:00
+#SBATCH -t 24:00:00
 
 # Project specification:
 #SBATCH -A lu2023-2-80
@@ -10,11 +10,11 @@
 #SBATCH -p gpua100
 
 # Naming of job:
-#SBATCH -J cnet_train
+#SBATCH -J dnet_train_eval
 
 # Job output:
-#SBATCH -o cnet_train_%j.out
-#SBATCH -e cnet_train_%j.err
+#SBATCH -o dnet_train_eval_%j.out
+#SBATCH -e dnet_train__eval%j.err
 
 # Job notification:
 #SBATCH --mail-user=carl.sandelius.4360@student.lu.se
@@ -43,10 +43,10 @@ echo "Starting processing work"
 
 # Change directory:
 echo "Changing directory"
-cd ../../scripts
+cd ../../dnet
 
 # Run the work tasks:
 echo "Start work"
-python cnet_run_training.py
+python train_eval_dnet.py
 
 echo "Finished processing."

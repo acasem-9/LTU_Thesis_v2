@@ -46,6 +46,9 @@ def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience,
     timer = TrainingTimer(project, name)
     timer.load_previous_time()
 
+
+
+
     result = model.train(
         data=data,
         project=project,
@@ -88,13 +91,13 @@ def main():
     ### INPUT #####################################################################################################
     # Model parameters
     data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019', 'c_data.yaml'))
-    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019','yolov8m'))#'./yolov8m'
-    name='20240405_T1858'
+    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019','yolov8x'))#'./yolov8m'
+    name='20240405_T2112'
     yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8x.pt')
     #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
-    epochs=10
+    epochs=250
     batch=16
-    patience=50
+    patience=15
     device=0
     exist_ok=False
     # Augmentation

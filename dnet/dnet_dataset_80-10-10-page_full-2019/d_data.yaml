@@ -1,7 +1,7 @@
-path: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data
-train: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\train\images
-val: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\validation\images
-test: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019\d_data\test\images
+path: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019/d_data
+train: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019/d_data/train/images
+val: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019/d_data/validation/images
+test: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019/d_data/test/images
 names:
   0: 0981
   1: 09BE

@@ -40,5 +40,12 @@ yolov8m.pt
 yolov8l.pt
 yolov8x.pt
 
+
 exit()
+
+cnet/yolov8n
+cnet/yolov8n.pt
+
+dnet/yolov8n
+dnet/yolov8n.pt
 

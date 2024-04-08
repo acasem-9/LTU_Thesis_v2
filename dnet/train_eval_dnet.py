@@ -28,23 +28,26 @@ class TrainingTimer:
 def update_yaml_path(yaml_file, path, train, val, test):
     with open(yaml_file, 'r') as file:
         yaml_content = yaml.safe_load(file)
-
+    
     yaml_content['path'] = path
     yaml_content['train'] = train
     yaml_content['val'] = val
     yaml_content['test'] = test
-
+    
     with open(yaml_file, 'w') as file:
         yaml.dump(yaml_content, file, default_flow_style=False, sort_keys=False)
-
+    
     print(f"Updated the 'path' in {yaml_file}")
 
 def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience, device, exist_ok,
-                     hsv_h, hsv_s, hsv_v, degrees, translate, scale, shear, perspective, flipud, fliplr,
+                     hsv_h, hsv_s, hsv_v, degrees, translate, scale, shear, perspective, flipud, fliplr, 
                      bgr, mosaic, mixup, copy_paste, auto_augment, erasing):
     model = YOLO(yolo_weights) #YOLO(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'pretrained', f'{yolo_weights}'))
     timer = TrainingTimer(project, name)
     timer.load_previous_time()
+
+
+
 
     result = model.train(
         data=data,
@@ -73,7 +76,7 @@ def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience,
         erasing=erasing,
     )
 
-    # metrics = model.val()  # no arguments needed, dataset and settings remembered
+    #metrics = model.val(project=project, name=name)  # no arguments needed, dataset and settings remembered
     # metrics.box.map    # map50-95
     # metrics.box.map50  # map50
     # metrics.box.map75  # map75
@@ -88,12 +91,13 @@ def main():
     ### INPUT #####################################################################################################
     # Model parameters
     data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dnet_dataset_80-10-10-page_full-2019', 'd_data.yaml'))
-    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dnet_dataset_80-10-10-page_full-2019', 'yolov8x'))
-    name='20230405_T1900'
-    yolo_weights = os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8x.pt')
-    epochs=10
+    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dnet_dataset_80-10-10-page_full-2019','yolov8x'))#'./yolov8m'
+    name='20240405_T2112'
+    yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8x.pt')
+    #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
+    epochs=250
     batch=16
-    patience=50
+    patience=15
     device=0
     exist_ok=False
     # Augmentation
@@ -114,23 +118,23 @@ def main():
     auto_augment = 'randaugment'
     erasing = 0.4
 
-    # Yaml path
+    # Yaml path 
     dataset_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'dataset_80-10-10-page_full-2019/d_data'))
     train_path = os.path.abspath(os.path.join(dataset_path, 'train/images'))
     val_path = os.path.abspath(os.path.join(dataset_path, 'validation/images'))
     test_path = os.path.abspath(os.path.join(dataset_path, 'test/images'))
-
+    
     ### RUN #######################################################################################################
         # Populate x_data.yaml
     update_yaml_path(data_yaml, dataset_path, train_path, val_path, test_path)
 
-    # Train & Evaluatin
+    # Train & Evaluatin 
     train_eval_model(data=data_yaml,
                      yolo_weights= yolo_weights,     # pre-trained weights or untrained weights
                      project=project,                # project (output)
                      name=name,
-                     epochs=epochs,
-                     batch=batch,
+                     epochs=epochs,                  
+                     batch=batch,                    
                      patience=patience,              # number of epochs with no improvement
                      device=device,                   # gpu to use
                      exist_ok=exist_ok,

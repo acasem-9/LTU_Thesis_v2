@@ -20,6 +20,9 @@
 #SBATCH --mail-user=carl.sandelius.4360@student.lu.se
 #SBATCH --mail-type=END
 
+# High Prio. Test jobs (remove for full run): 
+#SBATCH --qos=test
+
 # No restart if node failure:
 #SBATCH --no-requeue
 
