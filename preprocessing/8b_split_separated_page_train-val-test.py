@@ -95,7 +95,9 @@ def main():
         sys.exit(1)
         
     split_ratios = prompt_for_split()
-    base_dataset_dir = os.path.join(DATA_DIR, f"base_dataset_{split_ratios[0]}-{split_ratios[1]}-{split_ratios[2]}-page")
+    user_suf = input("Suffix to add (e.g. '_25'): ")
+
+    base_dataset_dir = os.path.join(DATA_DIR, f"dataset_{split_ratios[0]}-{split_ratios[1]}-{split_ratios[2]}-page{user_suf}")
 
     if confirm_overwrite(base_dataset_dir):
         separated_c = input("Enter the path to the separated_c_data to use: ").strip('"')

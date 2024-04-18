@@ -63,7 +63,7 @@ def process_single_file(txt_file, coordinates_path, labels_path, images_path, pa
                 file.write(line)
 
 def main():
-    user_confirmation = input("Do you want to proceed with data refinement? (y/n): ")
+    user_confirmation = input("Do you want to proceed? (y/n): ")
     if user_confirmation.lower() != 'y':
         print("Operation cancelled by the user.")
         sys.exit(1)

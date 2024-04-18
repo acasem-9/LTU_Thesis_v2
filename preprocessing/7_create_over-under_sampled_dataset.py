@@ -76,7 +76,7 @@ def create_new_dataset_for_separated_folders(base_folders, min_obs):
     for base_folder in base_folders:
         base_name = base_folder.strip(os.path.sep).split(os.path.sep)[-1]
         print(f'Processing {base_name}...')
-        new_dataset_suffix = "_{min_obs}"
+        new_dataset_suffix = f"_{min_obs}"
         new_dataset_name = f"{base_name}{new_dataset_suffix}"
         output_path = os.path.join(os.path.dirname(base_folder), new_dataset_name)
         
