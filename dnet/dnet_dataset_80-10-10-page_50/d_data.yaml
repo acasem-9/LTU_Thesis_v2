@@ -1,0 +1,23 @@
+path: ../datasets/d_data
+train: ../datasets/train/images
+val: ../datasets/validation/images
+test: ../datasets/test/images
+names:
+  0: 0981
+  1: 09BE
+  2: 09BF
+  3: 09C0
+  4: 09C1
+  5: 09C2
+  6: 09C7
+  7: 09C8
+  8: 09CB
+  9: 09CC
+  10: 09C3
+  11: 09B0 09CD 09AA
+  12: 09AA 09CD 09B0
+  13: 09A4 09CD 09B0
+  14: 0995 09CD 09B0
+  15: 09AA 09CD 09AF
+  16: 09AA 09CD 09AF 09BE
+nc: 17

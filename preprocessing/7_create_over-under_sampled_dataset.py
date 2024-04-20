@@ -4,6 +4,9 @@ specified minimum number of observations per object class for the training set.
 It also copies validation and test sets to the new dataset structure. 
 
 Skip this step if original dataset is to be used. 
+
+Tip: Take into account the comming split into e.g., 80-10-10 --> #obs per cls
+     to get the 'right' num. of obs. in train folder. 
 """
 import os
 import shutil

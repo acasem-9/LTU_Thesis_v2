@@ -1,5 +1,3 @@
-import os
-import csv
 from torchmetrics.text import WordErrorRate, CharErrorRate
 from pathlib import Path
 
@@ -16,7 +14,7 @@ def calculate_metrics(detections, ground_truth):
     wer_metric = WordErrorRate()
     cer_metric = CharErrorRate()
 
-    # Preparing lists of hypothesis and references
+    # Preparing lists for holdiong hypothesis and references
     hypothesis = [detections[k] for k in sorted(detections) if k in ground_truth]
     references = [ground_truth[k] for k in sorted(ground_truth) if k in detections]
 
@@ -24,7 +22,7 @@ def calculate_metrics(detections, ground_truth):
     wer_metric.update(hypothesis, references)
     cer_metric.update(hypothesis, references)
 
-    # Calculate Word and Character Recognition Accuracies
+    # Calculate word and character recognition accuracy
     wra = sum(1 for k in detections if k in ground_truth and detections[k] == ground_truth[k]) / len(ground_truth)
     total_chars = sum(len(ground_truth[k]) for k in ground_truth if k in detections)
     correct_chars = sum(sum(1 for i, c in enumerate(detections[k]) if i < len(ground_truth[k]) and c == ground_truth[k][i])
@@ -46,7 +44,6 @@ def main():
     print(f"Word Error Rate (WER): {wer:.2%}")
     print(f"Character Error Rate (CER): {cer:.2%}")
 
-    # Save metrics to a file
     output_file_path = Path(test_path).parent / "evaluation_metrics.txt"
     with open(output_file_path, 'w') as file:
         file.write(f"Word Recognition Accuracy (WRA): {wra:.2%}\n")

@@ -13,15 +13,15 @@ import legacy.config_bangla as bc
 
 # d-net conjuncts: র্প প্র ত্র ক্র প্য প্যা
 # 'ি' 
-character = 'প্য'# 'রো' 
+character = 'র'# 'রো' ভরুর
 
 # Converting character to hexadecimal unicode code points
 unicode_hex = [format(ord(char), '04X').upper() for char in character]
-print("Hexadecimal Notation:", unicode_hex)
+print("Hexadecimal Notation:", ' '.join(unicode_hex))
 
 # Converting hexadecimal to decimal notation
 unicode_decimal = [format(int(code, 16), '04d') for code in unicode_hex]
-print("Decimal Notation (formatted):", unicode_decimal)
+print("Decimal Notation (formatted):", ' '.join(unicode_decimal))
 
 for uh in unicode_hex:
     if uh in bc.CONSONANTS:

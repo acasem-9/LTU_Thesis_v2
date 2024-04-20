@@ -121,7 +121,7 @@ def process_data(base_folder):
     print("Dataset processing and updating completed.")
 
 def main():
-    base_folder = input("Enter the path to the base dataset folder: ").strip('\'\"')
+    base_folder = input("Enter the path to the dataset folder: ").strip('\'\"')
 
     process_data(base_folder)
 
