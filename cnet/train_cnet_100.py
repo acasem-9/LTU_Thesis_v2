@@ -46,9 +46,6 @@ def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience,
     timer = TrainingTimer(project, name)
     timer.load_previous_time()
 
-
-
-
     result = model.train(
         data=data,
         project=project,
@@ -75,26 +72,18 @@ def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience,
         auto_augment=auto_augment,
         erasing=erasing,
     )
-
-    #metrics = model.val(project=project, name=name)  # no arguments needed, dataset and settings remembered
-    # metrics.box.map    # map50-95
-    # metrics.box.map50  # map50
-    # metrics.box.map75  # map75
-    # metrics.box.maps   # a list contains map50-95 of each category
-
     # Export the model to ONNX format
-    success = model.export(format='onnx')
+    model.export(format='onnx')
     timer.update_training_time()
     #return result
 
 def main():
     ### INPUT #####################################################################################################
     # Model parameters
-    data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dnet_dataset_80-10-10-page_full-2019', 'd_data.yaml'))
-    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dnet_dataset_80-10-10-page_full-2019','yolov8x'))#'./yolov8m'
-    name='20240405_T2112'
+    data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_100', 'c_data.yaml'))
+    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_100','yolov8x'))#'./yolov8m'
+    name='20240421_T1320_100'
     yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8x.pt')
-    #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
     epochs=250
     batch=16
     patience=15
@@ -119,7 +108,7 @@ def main():
     erasing = 0.4
 
     # Yaml path 
-    dataset_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'dataset_80-10-10-page_full-2019/d_data'))
+    dataset_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'dataset_80-10-10-page_100/c_data'))
     train_path = os.path.abspath(os.path.join(dataset_path, 'train/images'))
     val_path = os.path.abspath(os.path.join(dataset_path, 'validation/images'))
     test_path = os.path.abspath(os.path.join(dataset_path, 'test/images'))

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Job time (hh:mm:ss):
-#SBATCH -t 24:00:00
+#SBATCH -t 04:00:00
 
 # Project specification:
 #SBATCH -A lu2023-2-80
@@ -10,15 +10,15 @@
 #SBATCH -p gpua100
 
 # Naming of job:
-#SBATCH -J dnet_train_eval
+#SBATCH -J cnet_train_200
 
 # Job output:
-#SBATCH -o dnet_train_eval_%j.out
-#SBATCH -e dnet_train__eval%j.err
+#SBATCH -o train_cnet_200_%j.out
+#SBATCH -e train_cnet_200_%j.err
 
 # Job notification:
-#SBATCH --mail-user=carl.sandelius.4360@student.lu.se
-#SBATCH --mail-type=END
+#SBATCH --mail-user=ca4360sa-s@student.lu.se
+#SBATCH --mail-type=ALL
 
 # No restart if node failure:
 #SBATCH --no-requeue
@@ -43,10 +43,10 @@ echo "Starting processing work"
 
 # Change directory:
 echo "Changing directory"
-cd ../../dnet
+cd ../../cnet
 
 # Run the work tasks:
 echo "Start work"
-python train_eval_dnet.py
+python train_cnet_200.py
 
 echo "Finished processing."
