@@ -90,10 +90,10 @@ def train_eval_model(data, yolo_weights, project, name, epochs, batch, patience,
 def main():
     ### INPUT #####################################################################################################
     # Model parameters
-    data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019', 'c_data.yaml'))
-    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cnet_dataset_80-10-10-page_full-2019','yolov8x'))#'./yolov8m'
-    name='20240405_T2112'
-    yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov8x.pt')
+    data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cdnet_dataset_80-10-10-page_full-2019_unconstrained_single', 'data.yaml'))
+    project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cdnet_dataset_80-10-10-page_full-2019_unconstrained_single','yolov9e'))#'./yolov8m'
+    name='20240430_T1919'
+    yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov9e.pt')
     #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
     epochs=250
     batch=16
@@ -119,7 +119,7 @@ def main():
     erasing = 0.4
 
     # Yaml path 
-    dataset_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'dataset_80-10-10-page_full-2019/c_data'))
+    dataset_path = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'dataset_80-10-10-page_full-2019_unconstrained_single'))
     train_path = os.path.abspath(os.path.join(dataset_path, 'train/images'))
     val_path = os.path.abspath(os.path.join(dataset_path, 'validation/images'))
     test_path = os.path.abspath(os.path.join(dataset_path, 'test/images'))

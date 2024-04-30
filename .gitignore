@@ -68,6 +68,8 @@ yolov8m.pt
 yolov8l.pt
 yolov8x.pt
 
+yolov9e.pt
+yolov9c.pt
 
 exit()
 
