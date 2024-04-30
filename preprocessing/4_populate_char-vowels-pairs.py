@@ -1,3 +1,7 @@
+'''
+The scripts appends the dependent vowels (defined as pair of a consonant and a dependent vowel)
+identified in the bangla_yolo_class_mapping.csv till DEP_VOWELS_CONSONANTS in the config_bangla.json
+'''
 import csv
 import json
 import os

@@ -1,7 +1,7 @@
 """
 This script classifies each Bangla character as either a consonant ('c') or a digit ('d'). 
 It reads the mapping file specified by the user, applies the classification based on 
-predefined Unicode ranges in 'config_bangla.py', and updates the CSV file with the new 
+predefined Unicode ranges in 'config_bangla.json', and updates the CSV file with the new 
 'character_class' column.
 """
 

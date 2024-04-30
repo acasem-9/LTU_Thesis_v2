@@ -1,5 +1,5 @@
 """
-Remove lines that is not if interest and txt/tif pairs that have become empty. 
+Remove lines that is not of interest, and txt/tif pairs that have become empty. 
 """
 
 import os
