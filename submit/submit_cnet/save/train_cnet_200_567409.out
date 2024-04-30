@@ -1,0 +1,347 @@
+Starting processing work
+Changing directory
+Start work
+Updated the 'path' in /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/c_data.yaml
+New https://pypi.org/project/ultralytics/8.2.2 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics YOLOv8.1.43 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/yolov8x.pt, data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/c_data.yaml, epochs=250, time=None, patience=15, batch=16, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=8, project=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x, name=20240421_T1320_200, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=5.0, translate=0.1, scale=0.5, shear=5.0, perspective=0.0, flipud=0.0, fliplr=0.0, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200
+Overriding model.yaml nc=80 with nc=68
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1      2320  ultralytics.nn.modules.conv.Conv             [3, 80, 3, 2]                 
+  1                  -1  1    115520  ultralytics.nn.modules.conv.Conv             [80, 160, 3, 2]               
+  2                  -1  3    436800  ultralytics.nn.modules.block.C2f             [160, 160, 3, True]           
+  3                  -1  1    461440  ultralytics.nn.modules.conv.Conv             [160, 320, 3, 2]              
+  4                  -1  6   3281920  ultralytics.nn.modules.block.C2f             [320, 320, 6, True]           
+  5                  -1  1   1844480  ultralytics.nn.modules.conv.Conv             [320, 640, 3, 2]              
+  6                  -1  6  13117440  ultralytics.nn.modules.block.C2f             [640, 640, 6, True]           
+  7                  -1  1   3687680  ultralytics.nn.modules.conv.Conv             [640, 640, 3, 2]              
+  8                  -1  3   6969600  ultralytics.nn.modules.block.C2f             [640, 640, 3, True]           
+  9                  -1  1   1025920  ultralytics.nn.modules.block.SPPF            [640, 640, 5]                 
+ 10                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 11             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 12                  -1  3   7379200  ultralytics.nn.modules.block.C2f             [1280, 640, 3]                
+ 13                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 14             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 15                  -1  3   1948800  ultralytics.nn.modules.block.C2f             [960, 320, 3]                 
+ 16                  -1  1    922240  ultralytics.nn.modules.conv.Conv             [320, 320, 3, 2]              
+ 17            [-1, 12]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 18                  -1  3   7174400  ultralytics.nn.modules.block.C2f             [960, 640, 3]                 
+ 19                  -1  1   3687680  ultralytics.nn.modules.conv.Conv             [640, 640, 3, 2]              
+ 20             [-1, 9]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 21                  -1  3   7379200  ultralytics.nn.modules.block.C2f             [1280, 640, 3]                
+ 22        [15, 18, 21]  1   8783452  ultralytics.nn.modules.head.Detect           [68, [320, 640, 640]]         
+Model summary: 365 layers, 68218092 parameters, 68218076 gradients, 258.5 GFLOPs
+
+Transferred 589/595 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200', view at http://localhost:6006/
+Freezing layer 'model.22.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/c_data/train/labels.cache
+[34m[1mval: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/c_data/validation/labels.cache
+Plotting labels to /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m SGD(lr=0.01, momentum=0.9) with parameter groups 97 weight(decay=0.0), 104 weight(decay=0.0005), 103 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200[0m
+Starting training for 250 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.868        0.7      0.814      0.469
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.844      0.796       0.87      0.524
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.877      0.791      0.868      0.501
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.901      0.794      0.878      0.471
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.92      0.817      0.901      0.522
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.923      0.877      0.906      0.538
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.938      0.869      0.919       0.58
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.943      0.886       0.93       0.58
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.919      0.902      0.923      0.588
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.948      0.903      0.926      0.572
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.941      0.896      0.921      0.593
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.939      0.921      0.935      0.599
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.948      0.905      0.937      0.596
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.922       0.92      0.934      0.603
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.967      0.921       0.94      0.614
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.951       0.91      0.941      0.624
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.962      0.928      0.938      0.605
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.97      0.927       0.94      0.615
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.946      0.924      0.939      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.948      0.919       0.94      0.627
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.931      0.935      0.941      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.944      0.925       0.94       0.62
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.951      0.926      0.941      0.638
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.954      0.926      0.936      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.966      0.925      0.938      0.618
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.95      0.925      0.939      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.961       0.93      0.942      0.646
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.971      0.915      0.937      0.622
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.942      0.915      0.939      0.629
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.939      0.927      0.941      0.638
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.968      0.929      0.941      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.942      0.938      0.943      0.641
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.971      0.933      0.942      0.638
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.958      0.923      0.941      0.643
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.934      0.928      0.944      0.641
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.976      0.921      0.963      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.952      0.924      0.939      0.637
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.974      0.924      0.942      0.644
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.973      0.929      0.943      0.639
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.954      0.926      0.945      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.95      0.917      0.939      0.639
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.934      0.935      0.939      0.635
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.972      0.925      0.942      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.97      0.934      0.942      0.645
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.935      0.928      0.942      0.639
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.978      0.928      0.942      0.644
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.942       0.91      0.941      0.646
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.961      0.923      0.941      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.952      0.927      0.943      0.642
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.957      0.917      0.944       0.65
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.947       0.93      0.941      0.652
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.931      0.934      0.941      0.643
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.931      0.918      0.938      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.938      0.923      0.945      0.649
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.954      0.933      0.944      0.652
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.936      0.931      0.942      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.959      0.927      0.945      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.951      0.927      0.944      0.647
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.953      0.933      0.946      0.653
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.952      0.935      0.945      0.655
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.921      0.913      0.945      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.96      0.924      0.945      0.653
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.954       0.91      0.934      0.641
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.965       0.92      0.945      0.655
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.933      0.894      0.942      0.646
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.888      0.941      0.944      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.933      0.921      0.943      0.644
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387       0.91      0.923      0.941       0.65
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.935      0.933      0.943       0.65
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.949      0.925      0.944      0.652
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.935      0.925      0.942      0.654
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.946      0.924      0.933      0.642
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.954      0.924      0.942       0.64
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.934      0.927      0.942      0.641
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all        753       1387      0.937      0.925      0.945      0.649
+[34m[1mEarlyStopping: [0mTraining stopped early as no improvement observed in last 15 epochs. Best results observed at epoch 60, best model saved as best.pt.
+To update EarlyStopping(patience=15) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+75 epochs completed in 1.971 hours.
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/last.pt, 136.9MB
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.pt, 136.9MB
+
+Validating /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.pt...
+Ultralytics YOLOv8.1.43 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+Model summary (fused): 268 layers, 68189052 parameters, 0 gradients, 257.8 GFLOPs
+                   all        753       1387      0.951      0.935      0.945      0.655
+                  0985        753         21      0.945          1      0.995      0.793
+                  0987        753         29      0.992      0.966      0.979      0.839
+                  0988        753         25      0.892          1       0.97      0.798
+                  0989        753         59       0.99          1      0.995      0.836
+                  098A        753         42      0.988          1      0.995        0.8
+                  098F        753         30      0.996      0.933      0.973      0.685
+                  0990        753         25      0.887          1      0.995      0.855
+                  0993        753         25          1      0.988      0.995      0.975
+                  0994        753         26      0.995      0.962      0.994      0.813
+                  0995        753         29      0.969          1      0.995      0.636
+                  0997        753          7          1      0.805      0.978      0.639
+                  0998        753         18      0.987          1      0.995       0.71
+                  0999        753         94          0          0          0          0
+                  099C        753         22       0.99          1      0.995      0.757
+                  099D        753         10          1      0.977      0.995      0.586
+                  099F        753         18      0.935          1      0.995      0.815
+                  09A0        753         26      0.961      0.962      0.978      0.536
+                  09A3        753         15      0.979          1      0.995      0.646
+                  09A4        753         20      0.955       0.95      0.993      0.576
+                  09A6        753         41          1      0.993      0.995       0.61
+                  09A7        753         24      0.988          1      0.995      0.675
+                  09A8        753         33      0.996          1      0.995      0.638
+                  09AA        753         27          1      0.865      0.995      0.689
+                  09AB        753         22      0.977          1      0.995      0.759
+                  09AC        753         47      0.975      0.979      0.994      0.583
+                  09AD        753         19      0.987          1      0.995      0.664
+                  09AE        753         37          1      0.998      0.995      0.646
+                  09B0        753        137      0.688      0.956        0.9      0.557
+                  09B2        753         26       0.99          1      0.995      0.645
+                  09B6        753         17      0.979          1      0.995      0.715
+                  09B7        753         27          1      0.994      0.995      0.567
+                  09B8        753         50      0.979       0.98       0.98      0.598
+                  09B9        753         28      0.994      0.964      0.993      0.561
+                  09DF        753         22      0.958          1      0.995      0.773
+                  0982        753         21      0.991          1      0.995      0.503
+                  09CE        753         25      0.988          1      0.995      0.599
+        09A8 09CD 09A6        753         30      0.991          1      0.995      0.673
+        0999 09CD 0997        753         54          1          0          0          0
+        09A8 09CD 09A4        753         27      0.989          1      0.995      0.634
+        0995 09CD 09B8        753         25      0.986          1      0.995      0.585
+        09A4 09CD 09A4        753         30          1      0.981      0.995      0.586
+        099F 09CD 099F        753         25          1      0.932      0.995      0.811
+        09B7 09CD 09A3        753         26      0.956          1      0.995      0.684
+        09A6 09CD 09A7        753         26      0.992      0.962      0.983      0.778
+Speed: 0.2ms preprocess, 2.1ms inference, 0.0ms loss, 0.8ms postprocess per image
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200[0m
+Ultralytics YOLOv8.1.43 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+Model summary (fused): 268 layers, 68189052 parameters, 0 gradients, 257.8 GFLOPs
+
+[34m[1mPyTorch:[0m starting from '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 72, 8400) (130.5 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.15.0 opset 17...
+[34m[1mONNX:[0m export success ✅ 1.6s, saved as '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.onnx' (260.4 MB)
+
+Export complete (2.2s)
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights[0m
+Predict:         yolo predict task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.onnx imgsz=640  
+Validate:        yolo val task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/yolov8x/20240421_T1320_200/weights/best.onnx imgsz=640 data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cnet/cnet_dataset_80-10-10-page_200/c_data.yaml  
+Visualize:       https://netron.app
+Total training time: 7146.453126907349 seconds
+Finished processing.
