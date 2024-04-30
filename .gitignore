@@ -29,11 +29,25 @@ cnet/cnet_dataset_80-10-10-page_full-2019/yolov8n
 cnet/cnet_dataset_80-10-10-page_full-2019/yolov8m
 cnet/cnet_dataset_80-10-10-page_full-2019/yolov8l
 cnet/cnet_dataset_80-10-10-page_full-2019/yolov8x
+cnet/cnet_dataset_80-10-10-page_25/yolov8x
+cnet/cnet_dataset_80-10-10-page_50/yolov8x
+cnet/cnet_dataset_80-10-10-page_100/yolov8x
+cnet/cnet_dataset_80-10-10-page_200/yolov8x
+cnet/cnet_dataset_80-10-10-page_400/yolov8x
+cnet/cnet_dataset_80-10-10-page_800/yolov8x
 
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8n
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8m
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8l
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8x
+dnet/dnet_dataset_80-10-10-page_25/yolov8x
+dnet/dnet_dataset_80-10-10-page_50/yolov8x
+dnet/dnet_dataset_80-10-10-page_100/yolov8x
+dnet/dnet_dataset_80-10-10-page_200/yolov8x
+dnet/dnet_dataset_80-10-10-page_400/yolov8x
+dnet/dnet_dataset_80-10-10-page_800/yolov8x
+
+
 
 yolov8n.pt
 yolov8m.pt
