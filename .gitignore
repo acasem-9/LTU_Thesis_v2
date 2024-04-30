@@ -14,6 +14,9 @@ data/**
 
 data/raw/**
 
+submit/submit_cdnet/*out
+submit/submit_cdnet/*err
+
 submit/submit_cnet/*out
 submit/submit_cnet/*err
 
