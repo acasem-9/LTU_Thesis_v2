@@ -1,7 +1,7 @@
-path: ../datasets/d_data
-train: ../datasets/train/images
-val: ../datasets/validation/images
-test: ../datasets/test/images
+path: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/d_data
+train: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/d_data/train/images
+val: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/d_data/validation/images
+test: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_200/d_data/test/images
 names:
   0: 0981
   1: 09BE

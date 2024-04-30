@@ -13,7 +13,7 @@ import legacy.config_bangla as bc
 
 # d-net conjuncts: র্প প্র ত্র ক্র প্য প্যা
 # 'ি' 
-character = 'র'# 'রো' ভরুর
+character = 'ক্ক'# 'রো' ভরুর
 
 # Converting character to hexadecimal unicode code points
 unicode_hex = [format(ord(char), '04X').upper() for char in character]
