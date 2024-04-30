@@ -1,5 +1,5 @@
 """
-Create the yaml files for yolo based on the 'bangla_yolo_class_mapping_c_data_hex.csv'. 
+This script creates the yaml files for yolo based on the 'bangla_yolo_class_mapping_c_data_hex.csv'. 
 """
 import pandas as pd
 import yaml

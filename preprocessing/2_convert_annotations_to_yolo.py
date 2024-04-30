@@ -1,5 +1,5 @@
 """
-This script converts Bangla character annotations into the YOLO format from the Bois State Dataset annotation style. 
+This script converts Bangla character annotations into the YOLO format from the Bois State Handwritten Bangla Dataset annotation style. 
 It prompts the user for paths to folders containing label files and images, along with the path to a CSV file mapping 
 Bangla characters to YOLO class IDs. For each annotation, it calculates the center coordinates, width, and height relative 
 to the image dimensions, and associates each character with its corresponding YOLO class ID. The script then saves these 

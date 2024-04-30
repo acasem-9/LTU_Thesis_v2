@@ -24,6 +24,7 @@ def remove_quotes(path):
 def get_character_class(character):
     bc = load_configuration(lc.BANGLA_CONFIG_JSON)
     unicode_hex = [format(ord(char), '04X') for char in character]
+    print(unicode_hex)
     if len(unicode_hex) == 1:
         hex_code = unicode_hex[0]
         if hex_code in bc['CONSONANTS'] or hex_code in bc['IND_VOWELS'] or hex_code in bc['DIGITS'] or hex_code in bc['C_NET_ADDITIONAL']:
@@ -32,6 +33,29 @@ def get_character_class(character):
             return 'd'
     else:
         # Check for conjuncts
+        if unicode_hex in bc['CNET_CONJUNCTS']:
+            return 'c'
+        else:
+            return 'd'
+
+def get_character_class_new(character): #To continue from 
+    bc = load_configuration(lc.BANGLA_CONFIG_JSON)
+    unicode_hex = [format(ord(char), '04X') for char in character]
+
+    # Check if any hex code is in the D-net related configurations
+    for hex_code in unicode_hex:
+        if hex_code in bc['DEP_VOWELS'] or hex_code in bc['D_NET_ADDITIONAL'] or hex_code in bc['DNET_CONJUNCTS']:
+            return 'd'
+    
+    # If no hex code was found in the D-net lists, we check the rest
+    if len(unicode_hex) == 1:
+        hex_code = unicode_hex[0]
+        if hex_code in bc['CONSONANTS'] or hex_code in bc['IND_VOWELS'] or hex_code in bc['DIGITS'] or hex_code in bc['C_NET_ADDITIONAL']:
+            return 'c'
+        else:
+            return 'd'
+    else:
+        # Check for conjuncts in C-net
         if unicode_hex in bc['CNET_CONJUNCTS']:
             return 'c'
         else:
@@ -49,8 +73,8 @@ def main():
         print("Operation cancelled by the user.")
         sys.exit(1)
     
-    #csv_path = input("Enter the path to your 'bangla_yolo_class_mapping.csv' file: ")
-    csv_path = lc.BANGLA_YOLO_CLASS_MAPPING
+    csv_path = input("Enter the path to your 'bangla_yolo_class_mapping.csv' file: ")
+    #csv_path = lc.BANGLA_YOLO_CLASS_MAPPING
     update_character_classes(remove_quotes(csv_path))
 
 if __name__ == "__main__":
