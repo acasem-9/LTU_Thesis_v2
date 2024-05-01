@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Job time (hh:mm:ss):
-#SBATCH -t 24:00:00
+#SBATCH -t 15:00:00
 
 # Project specification:
 #SBATCH -A lu2023-2-80
+
 
 # GPU access:
 #SBATCH -p gpua100
