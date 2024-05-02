@@ -6,16 +6,15 @@
 # Project specification:
 #SBATCH -A lu2023-2-80
 
-
 # GPU access:
 #SBATCH -p gpua100
 
 # Naming of job:
-#SBATCH -J cdnet_train_full-2019_uncon_s
+#SBATCH -J cdnet_train_full-BSHBD_uncon_s
 
 # Job output:
-#SBATCH -o cdnet_train_full-2019_uncon_s_%j.out
-#SBATCH -e tcdnet_train_full-2019_uncon_s_%j.err
+#SBATCH -o cdnet_train_full-BSHBD_uncon_s_%j.out
+#SBATCH -e tcdnet_train_full-BSHBD_uncon_s_%j.err
 
 # Job notification:
 #SBATCH --mail-user=ca4360sa-s@student.lu.se
@@ -48,6 +47,6 @@ cd ../../cdnet
 
 # Run the work tasks:
 echo "Start work"
-python train_cdnet_full-2019_unconstrained_single.py
+python train_cdnet_full-BSHBD_unconstrained_single.py
 
 echo "Finished processing."

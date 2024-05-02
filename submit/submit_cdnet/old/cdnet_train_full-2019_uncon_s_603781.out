@@ -1,0 +1,103 @@
+Starting processing work
+Changing directory
+Start work
+Updated the 'path' in /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/data.yaml
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/yolov9e.pt, data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/data.yaml, epochs=250, time=None, patience=15, batch=16, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=8, project=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e, name=20240430_T1919, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=5.0, translate=0.1, scale=0.5, shear=5.0, perspective=0.0, flipud=0.0, fliplr=0.0, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e/20240430_T1919
+Overriding model.yaml nc=80 with nc=263
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1         0  ultralytics.nn.modules.block.Silence         []                            
+  1                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  2                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  3                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+  4                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+  5                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+  6                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+  7                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+  8                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+  9                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 10                   1  1      4160  ultralytics.nn.modules.block.CBLinear        [64, [64]]                    
+ 11                   3  1     49344  ultralytics.nn.modules.block.CBLinear        [256, [64, 128]]              
+ 12                   5  1    229824  ultralytics.nn.modules.block.CBLinear        [512, [64, 128, 256]]         
+ 13                   7  1    984000  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512]]   
+ 14                   9  1   2033600  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512, 1024]]
+ 15                   0  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+ 16[10, 11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[0, 0, 0, 0, 0]]             
+ 17                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+ 18[11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[1, 1, 1, 1]]                
+ 19                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+ 20                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 21    [12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[2, 2, 2]]                   
+ 22                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+ 23                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 24        [13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[3, 3]]                      
+ 25                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+ 26                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+ 27            [14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[4]]                         
+ 28                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 29                  -1  1    787968  ultralytics.nn.modules.block.SPPELAN         [1024, 512, 256]              
+ 30                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 31            [-1, 25]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 32                  -1  1   4005888  ultralytics.nn.modules.block.RepNCSPELAN4    [1536, 512, 512, 256, 2]      
+ 33                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 34            [-1, 22]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 35                  -1  1   1069056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 256, 256, 128, 2]      
+ 36                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 37            [-1, 32]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 38                  -1  1   3612672  ultralytics.nn.modules.block.RepNCSPELAN4    [768, 512, 512, 256, 2]       
+ 39                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 40            [-1, 29]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 41                  -1  1  12860416  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 512, 1024, 512, 2]     
+ 42        [35, 38, 41]  1   5785573  ultralytics.nn.modules.head.Detect           [263, [256, 512, 512]]        
+YOLOv9e summary: 1225 layers, 58347685 parameters, 58347669 gradients, 193.8 GFLOPs
+
+Transferred 1805/1811 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e/20240430_T1919', view at http://localhost:6006/
+Freezing layer 'model.42.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+Downloading https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n.pt to 'yolov8n.pt'...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page014a_Word021.tif: ignoring corrupt image/label: negative label values [  -0.021333]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page014a_Word047.tif: ignoring corrupt image/label: negative label values [  -0.040724]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page058a_Word084.tif: ignoring corrupt image/label: negative label values [  -0.058537]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page059a_Word045.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0075]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page059a_Word093.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page062a_Word060.tif: ignoring corrupt image/label: negative label values [  -0.014545]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page062a_Word077.tif: ignoring corrupt image/label: negative label values [  -0.010929]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page064a_Word041.tif: ignoring corrupt image/label: negative label values [  -0.079812]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page064a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.032698]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page066a_Word051.tif: ignoring corrupt image/label: negative label values [  -0.011321]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page067a_Word046.tif: ignoring corrupt image/label: negative label values [ -0.0086957]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page071a_Word075.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page075a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.073733]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page086a_Word106.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page088a_Word088.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page091a_Word039.tif: ignoring corrupt image/label: negative label values [  -0.052632]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page099a_Word067.tif: ignoring corrupt image/label: negative label values [  -0.049587]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page119a_Word052.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page119a_Word091.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page130a_Word092.tif: ignoring corrupt image/label: negative label values [   -0.13542]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page147a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page150a_Word062.tif: ignoring corrupt image/label: negative label values [      -0.03]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page150a_Word069.tif: ignoring corrupt image/label: negative label values [ -0.0083102]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page150a_Word082.tif: ignoring corrupt image/label: negative label values [  -0.040609]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page180a_Word041.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0249]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/images/Page193a_Word104.tif: ignoring corrupt image/label: negative label values [  -0.043165]
+[34m[1mtrain: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/train/labels.cache
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/images/Page218a_Word063.tif: ignoring corrupt image/label: negative label values [  -0.038462]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/images/Page223a_Word040.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0053]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/images/Page223a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.057692]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/images/Page223a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.025641]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/images/Page225a_Word045.tif: ignoring corrupt image/label: negative label values [  -0.079365]
+[34m[1mval: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/dataset_80-10-10-page_full-2019_unconstrained_single/validation/labels.cache
+Plotting labels to /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e/20240430_T1919/labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m SGD(lr=0.01, momentum=0.9) with parameter groups 298 weight(decay=0.0), 310 weight(decay=0.0005), 309 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e/20240430_T1919[0m
+Starting training for 250 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/train_cdnet_full-2019_unconstrained_single.py", line 1, in <module>
+    from ultralytics import YOLO
+  File "/home/ca4360sa/.local/lib/python3.9/site-packages/ultralytics/__init__.py", line 5, in <module>
+    from ultralytics.data.explorer.explorer import Explorer
+  File "/home/ca4360sa/.local/lib/python3.9/site-packages/ultralytics/data/__init__.py", line 3, in <module>
+    from .base import BaseDataset
+  File "/home/ca4360sa/.local/lib/python3.9/site-packages/ultralytics/data/base.py", line 14, in <module>
+    import psutil
+ModuleNotFoundError: No module named 'psutil'
