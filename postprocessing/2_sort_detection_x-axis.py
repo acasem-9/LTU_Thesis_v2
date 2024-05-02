@@ -23,6 +23,7 @@ def main():
 
     # Iterate over each text file in the directory and sort its detections
     label_files = glob.glob(os.path.join(labels_folder, '*.txt'))
+    print('Processing...')
     for file_path in label_files:
         sort_detections_by_x(file_path)
 

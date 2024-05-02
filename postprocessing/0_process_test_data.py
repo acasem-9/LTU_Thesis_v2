@@ -18,12 +18,12 @@ def load_model(weights_path):
     return model
 
 # Process images and save detections
-def process_images(model, images_path, detection_labels_path, detection_images_path, save_image):
+def process_images(model, images_path, detection_labels_path, detection_images_path, save_image, conf_level):
     image_files = glob.glob(os.path.join(images_path, '*.tif'))
     for image_path in image_files:
         img = cv2.imread(image_path)  # Load image with OpenCV
         img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Convert to RGB
-        results = model.predict(source=img_rgb, conf=0.6, device='0')  # Apply model
+        results = model.predict(source=img_rgb, conf=conf_level, device='0')  # Apply model
 
         # Save results to corresponding text file in (and tif) detections folder
         txt_fname = os.path.splitext(os.path.basename(image_path))[0] + '.txt'
@@ -49,10 +49,11 @@ def main():
     project_folder = input("Enter the path to the project folder for c-net or d-net (e.g., '20240405_T2112'): ").strip('"')
     test_data_folder = input("Enter the path to the test data folder (e.g., 'c_data/test'): ").strip('"')
     save_images = input("Do you want to create images with bounding boxes plotted? (yes/no): ").lower().strip()
+    conf_level = float(input("Enter the confidence level for the detections to keep (e.g., 0.4): ").strip('"'))
 
     # Prepare directories
     base_path = Path(project_folder)
-    test_output_folder = base_path.parent / (base_path.name + '_test')
+    test_output_folder = base_path.parent / (base_path.name + '_test' + f'_conf={conf_level}')
     detection_folder = test_output_folder / 'detections'
     detection_labels_folder = detection_folder / 'labels'
     detection_images_folder = detection_folder / 'images'
@@ -72,7 +73,7 @@ def main():
     images_path = Path(test_data_folder) / 'images'
 
     # Process images
-    process_images(model, images_path, detection_labels_folder,detection_images_folder, save_images)
+    process_images(model, images_path, detection_labels_folder,detection_images_folder, save_images, conf_level)
 
     print(f"All images processed. Detections are saved in {detection_labels_folder}.")
 

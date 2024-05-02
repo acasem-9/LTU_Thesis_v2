@@ -1,7 +1,7 @@
-path: ../datasets/hex.csv
-train: ../datasets/train/images
-val: ../datasets/validation/images
-test: ../datasets/test/images
+path: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019_unconstrained_single
+train: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019_unconstrained_single\train\images
+val: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019_unconstrained_single\validation\images
+test: c:\Users\sande\Documents\LTU\LTU - Thesis\thesis_project_v2\data\dataset_80-10-10-page_full-2019_unconstrained_single\test\images
 names:
   0: 09B0
   1: 002C

@@ -1,4 +1,6 @@
 """
+SKIP THIS STEP IF FOLLOWING THE SINGLE NETWORK APPROACH!
+
 This script is designed to separate a dataset of Bangla script images into two distinct categories: characters and diacritics. 
 It reads the dataset from a specified directory, classifies each image based on the accompanying label files and a predefined class mapping, 
 and then copies the images and labels into separate directories for diacritics and characters the opposing character classes are removed. 

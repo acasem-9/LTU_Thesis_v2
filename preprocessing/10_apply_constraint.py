@@ -1,5 +1,10 @@
 """
-Remove lines that is not of interest, and txt/tif pairs that have become empty. 
+This script is designed for updating YOLO class mappings and label files.
+It performs a comprehensive update of YOLO mappings based on new constraints and conjuncts definitions, reflecting changes
+in the classifications of characters and updating label files accordingly.
+
+
+It removes lines that is not of interest, and txt/tif pairs that have become empty. 
 """
 
 import os

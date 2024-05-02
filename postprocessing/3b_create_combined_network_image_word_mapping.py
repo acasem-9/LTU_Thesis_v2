@@ -1,3 +1,8 @@
+'''
+This script processes YOLO label files that classify detections into Bangla characters. It combines detections
+from separate label sets (c-data and d-data), each potentially classified under different mappings (for consonants and dependent characters).
+
+'''
 import csv
 import glob
 import os

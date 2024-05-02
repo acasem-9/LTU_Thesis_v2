@@ -1,3 +1,9 @@
+"""
+This script is designed for updating YOLO class mappings and label files for a dataset involving Bangla characters.
+It performs a comprehensive update of YOLO mappings based on new constraints and conjuncts definitions, reflecting changes
+in the classifications of characters and updating label files accordingly.
+"""
+
 import os
 import pandas as pd
 from collections import defaultdict

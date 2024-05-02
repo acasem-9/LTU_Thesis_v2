@@ -45,7 +45,7 @@ def main():
     mode = 'to_relative' if conversion_direction == 'a-t-r' else 'to_absolute'
 
     images_folder = Path(labels_folder).parent / 'images'
-
+    print('Processing...')
     process_files(labels_folder, images_folder, mode)
     print("Conversion completed successfully.")
 

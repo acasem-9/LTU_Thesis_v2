@@ -1,3 +1,9 @@
+"""
+This script processes a CSV file containing Bangla characters by adding a new column that 
+converts each character into its Unicode hexadecimal notation. The script reads an existing CSV file, 
+applies the conversion, and saves the result to a new CSV file with '_hex' appended to the original filename.
+"""
+
 import pandas as pd
 import os
 

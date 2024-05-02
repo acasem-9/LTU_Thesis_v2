@@ -1,4 +1,6 @@
 """
+SKIP THIS STEP IF FOLLOWING THE SINGLE NETWORK APPROACH!
+
 This script is designed to refine the classification of a dataset that has been 
 previously separated into characters and diacritics (yolo notation). It processes 
 the label files within each separated directory and removes any entries that do 

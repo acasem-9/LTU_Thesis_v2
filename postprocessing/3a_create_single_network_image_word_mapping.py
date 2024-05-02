@@ -1,3 +1,8 @@
+'''
+This script is designed to process YOLO label files for Bangla characters, converting YOLO class indices in label files 
+into readable Bangla text and mapping these texts to their corresponding image files. This for a single network. 
+'''
+
 import csv
 import glob
 import os
@@ -30,6 +35,7 @@ def main():
     # User input for paths
     labels_folder = input("Enter the path to the labels folder: ").strip('"')
     csv_mapping_path = input("Enter the path to the Bangla YOLO class mapping CSV (note that hex should be included): ").strip('"')
+    print('Processing...')
 
     # Load YOLO to Bangla character mapping
     class_to_bangla_mapping = load_class_to_bangla_mapping(csv_mapping_path)
@@ -45,8 +51,5 @@ def main():
 
     print(f"Image-to-word mappings saved in {output_file_path}")
 
-if __name__ == "__main__":
-
-
-    
+if __name__ == "__main__":  
     main()
