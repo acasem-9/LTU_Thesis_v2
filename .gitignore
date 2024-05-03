@@ -54,6 +54,7 @@ dnet/dnet_dataset_80-10-10-page_full-2019/yolov8m
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8l
 dnet/dnet_dataset_80-10-10-page_full-2019/yolov8x
 dnet/dnet_dataset_80-10-10-page_25/yolov8x
+
 dnet/dnet_dataset_80-10-10-page_50/yolov8x
 dnet/dnet_dataset_80-10-10-page_100/yolov8x
 dnet/dnet_dataset_80-10-10-page_200/yolov8x
