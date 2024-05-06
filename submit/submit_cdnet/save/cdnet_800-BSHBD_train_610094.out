@@ -1,0 +1,433 @@
+Starting processing work
+Changing directory
+Start work
+Updated the 'path' in /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/data.yaml
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/yolov9e.pt, data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/data.yaml, epochs=250, time=None, patience=15, batch=16, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=8, project=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e, name=20240502_T1720, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=5.0, translate=0.1, scale=0.5, shear=5.0, perspective=0.0, flipud=0.0, fliplr=0.0, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720
+Overriding model.yaml nc=80 with nc=263
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1         0  ultralytics.nn.modules.block.Silence         []                            
+  1                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  2                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  3                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+  4                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+  5                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+  6                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+  7                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+  8                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+  9                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 10                   1  1      4160  ultralytics.nn.modules.block.CBLinear        [64, [64]]                    
+ 11                   3  1     49344  ultralytics.nn.modules.block.CBLinear        [256, [64, 128]]              
+ 12                   5  1    229824  ultralytics.nn.modules.block.CBLinear        [512, [64, 128, 256]]         
+ 13                   7  1    984000  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512]]   
+ 14                   9  1   2033600  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512, 1024]]
+ 15                   0  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+ 16[10, 11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[0, 0, 0, 0, 0]]             
+ 17                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+ 18[11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[1, 1, 1, 1]]                
+ 19                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+ 20                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 21    [12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[2, 2, 2]]                   
+ 22                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+ 23                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 24        [13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[3, 3]]                      
+ 25                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+ 26                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+ 27            [14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[4]]                         
+ 28                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 29                  -1  1    787968  ultralytics.nn.modules.block.SPPELAN         [1024, 512, 256]              
+ 30                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 31            [-1, 25]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 32                  -1  1   4005888  ultralytics.nn.modules.block.RepNCSPELAN4    [1536, 512, 512, 256, 2]      
+ 33                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 34            [-1, 22]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 35                  -1  1   1069056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 256, 256, 128, 2]      
+ 36                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 37            [-1, 32]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 38                  -1  1   3612672  ultralytics.nn.modules.block.RepNCSPELAN4    [768, 512, 512, 256, 2]       
+ 39                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 40            [-1, 29]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 41                  -1  1  12860416  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 512, 1024, 512, 2]     
+ 42        [35, 38, 41]  1   5785573  ultralytics.nn.modules.head.Detect           [263, [256, 512, 512]]        
+YOLOv9e summary: 1225 layers, 58347685 parameters, 58347669 gradients, 193.8 GFLOPs
+
+Transferred 1805/1811 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720', view at http://localhost:6006/
+Freezing layer 'model.42.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page014a_Word021.tif: ignoring corrupt image/label: negative label values [  -0.021333]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page014a_Word021_1.tif: ignoring corrupt image/label: negative label values [  -0.021333]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page014a_Word021_2.tif: ignoring corrupt image/label: negative label values [  -0.021333]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page014a_Word021_3.tif: ignoring corrupt image/label: negative label values [  -0.021333]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page014a_Word047.tif: ignoring corrupt image/label: negative label values [  -0.040724]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page058a_Word084.tif: ignoring corrupt image/label: negative label values [  -0.058537]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page058a_Word084_1.tif: ignoring corrupt image/label: negative label values [  -0.058537]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word045.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0075]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093_1.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093_2.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093_3.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093_4.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page059a_Word093_5.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page062a_Word077.tif: ignoring corrupt image/label: negative label values [  -0.010929]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page062a_Word077_1.tif: ignoring corrupt image/label: negative label values [  -0.010929]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page062a_Word077_2.tif: ignoring corrupt image/label: negative label values [  -0.010929]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page062a_Word077_3.tif: ignoring corrupt image/label: negative label values [  -0.010929]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page064a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.032698]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page064a_Word093_1.tif: ignoring corrupt image/label: negative label values [  -0.032698]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page064a_Word093_2.tif: ignoring corrupt image/label: negative label values [  -0.032698]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page066a_Word051.tif: ignoring corrupt image/label: negative label values [  -0.011321]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page067a_Word046.tif: ignoring corrupt image/label: negative label values [ -0.0086957]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_1.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_2.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_3.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_4.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_5.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page071a_Word075_6.tif: ignoring corrupt image/label: negative label values [   -0.10959]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page086a_Word106.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page086a_Word106_1.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page086a_Word106_2.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page088a_Word088.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page088a_Word088_1.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page088a_Word088_2.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page088a_Word088_3.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page099a_Word067.tif: ignoring corrupt image/label: negative label values [  -0.049587]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052_1.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052_2.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052_3.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052_4.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word052_5.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word091.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word091_1.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word091_2.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word091_3.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page119a_Word091_4.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page130a_Word092.tif: ignoring corrupt image/label: negative label values [   -0.13542]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page130a_Word092_1.tif: ignoring corrupt image/label: negative label values [   -0.13542]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054_1.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054_2.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054_3.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054_4.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page147a_Word054_5.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page150a_Word062.tif: ignoring corrupt image/label: negative label values [      -0.03]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page150a_Word069.tif: ignoring corrupt image/label: negative label values [ -0.0083102]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page150a_Word069_1.tif: ignoring corrupt image/label: negative label values [ -0.0083102]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page150a_Word082.tif: ignoring corrupt image/label: negative label values [  -0.040609]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page150a_Word082_1.tif: ignoring corrupt image/label: negative label values [  -0.040609]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page193a_Word104.tif: ignoring corrupt image/label: negative label values [  -0.043165]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page193a_Word104_1.tif: ignoring corrupt image/label: negative label values [  -0.043165]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page193a_Word104_2.tif: ignoring corrupt image/label: negative label values [  -0.043165]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/images/Page193a_Word104_3.tif: ignoring corrupt image/label: negative label values [  -0.043165]
+[34m[1mtrain: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/train/labels.cache
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/images/Page218a_Word063.tif: ignoring corrupt image/label: negative label values [  -0.038462]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/images/Page223a_Word040.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0053]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/images/Page223a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.057692]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/images/Page223a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.025641]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/images/Page225a_Word045.tif: ignoring corrupt image/label: negative label values [  -0.079365]
+[34m[1mval: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_800/validation/labels.cache
+Plotting labels to /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m SGD(lr=0.01, momentum=0.9) with parameter groups 298 weight(decay=0.0), 310 weight(decay=0.0005), 309 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720[0m
+Starting training for 250 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.855      0.718      0.802      0.566
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.87       0.75      0.844      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.872      0.771      0.844      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.87      0.769      0.847      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.867      0.782      0.854      0.658
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.869      0.779      0.852      0.661
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.857      0.785      0.844      0.658
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.865      0.785      0.844      0.659
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.871      0.784      0.845      0.661
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.866      0.783      0.846      0.662
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.863      0.783      0.844      0.661
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.857      0.787      0.841      0.659
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.845       0.79      0.845      0.662
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.841      0.791       0.84      0.658
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.863      0.773      0.844      0.661
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.864      0.774      0.839      0.656
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.863      0.775      0.836      0.653
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.866      0.773      0.835      0.652
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.867      0.774      0.836      0.653
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.861      0.774      0.837      0.653
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.855      0.775      0.837      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.853      0.775      0.836       0.65
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.859      0.774      0.833      0.648
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.856      0.775      0.832      0.647
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.858      0.773      0.832      0.647
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.867      0.773      0.837      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.867      0.773      0.836      0.651
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.868      0.772      0.836       0.65
+[34m[1mEarlyStopping: [0mTraining stopped early as no improvement observed in last 15 epochs. Best results observed at epoch 13, best model saved as best.pt.
+To update EarlyStopping(patience=15) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+28 epochs completed in 19.711 hours.
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/last.pt, 117.7MB
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.pt, 117.7MB
+
+Validating /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.pt...
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+YOLOv9e summary (fused): 687 layers, 57579173 parameters, 0 gradients, 190.3 GFLOPs
+                   all       2508       8676      0.845       0.79      0.845      0.663
+                  09B0       2508        627      0.907      0.973      0.971      0.716
+                  002C       2508        377       0.96      0.902      0.945      0.521
+                  09B8       2508        310      0.982      0.691      0.921       0.63
+                  09A8       2508        282      0.925      0.793      0.928      0.612
+                  0964       2508        205      0.919      0.937      0.959      0.476
+                  09AC       2508        195      0.949      0.669       0.94      0.651
+             09AC 09BE       2508        188      0.989      0.934      0.985       0.74
+                  002D       2508        222      0.866      0.813      0.794       0.28
+                  098F       2508        168      0.981       0.94      0.986      0.759
+             09A8 09BE       2508        146      0.988      0.554      0.899      0.734
+                  0986       2508        140          1      0.954      0.994      0.817
+                  09A6       2508        142      0.969      0.869      0.958      0.624
+                  0995       2508        121      0.911      0.992      0.988      0.674
+                  099C       2508        120      0.991      0.903       0.97      0.751
+                  09AE       2508        117      0.759      0.786      0.885      0.615
+                  09AA       2508        122      0.913      0.943      0.964      0.675
+                  09B2       2508         96      0.912      0.979       0.96      0.669
+                  0982       2508         97      0.968      0.979      0.988      0.578
+                  09A4       2508         95      0.967      0.853      0.961      0.647
+             09AE 09BE       2508         93       0.84      0.846      0.913      0.719
+             0995 09C7       2508         95      0.962      0.989      0.993      0.878
+             099C 09BE       2508         93      0.977      0.933      0.976      0.659
+   0995 09CD 09B7 09BF       2508         96          1      0.842      0.964      0.787
+             09AA 09C2       2508         91      0.907          1       0.96      0.725
+                  0989       2508         70      0.771          1       0.99      0.848
+             09AE 09C7       2508         72      0.876          1      0.979      0.799
+   09AA 09CD 09B0 09BE       2508         71       0.98      0.986      0.993      0.763
+             09AE 09C1       2508         72      0.963      0.716      0.946      0.613
+             09A6 09C7       2508         72       0.98          1      0.995      0.786
+                  0998       2508         71       0.73      0.944      0.883      0.687
+                  0985       2508         72      0.858      0.986      0.986      0.818
+             09A4 09C7       2508         73      0.992          1      0.995      0.881
+             09AA 09BE       2508         71      0.985      0.947      0.971      0.627
+                  09B6       2508         72          1      0.891      0.994      0.747
+             09B0 09C7       2508         73      0.895      0.986      0.987      0.911
+                  09B9       2508         72      0.968      0.972      0.986       0.65
+             09B2 09BF       2508         70      0.992          1      0.995      0.806
+             09A5 09BE       2508         71      0.966          1      0.994      0.832
+        09B0 09CD 09AC       2508         67      0.932      0.791        0.9      0.505
+             09A8 09C7       2508         70      0.713        0.8      0.703      0.588
+                  09A3       2508         46      0.666       0.63       0.72      0.497
+             09AA 09C1       2508         51      0.965      0.902      0.975      0.781
+                  0987       2508         51      0.967      0.961      0.979      0.864
+             09B6 09C7       2508         48      0.988          1      0.995      0.851
+             09B8 09BE       2508         48      0.581          1      0.868      0.675
+             09B2 09BE       2508         48      0.979      0.974       0.96      0.686
+             0996 09BE       2508         48      0.944          1      0.979      0.754
+             09A6 09C0       2508         45          1      0.399      0.944      0.754
+             0995 09CB       2508         48      0.978          1      0.995       0.84
+             09B2 09C7       2508         49      0.911       0.98      0.991      0.725
+        09A4 09CD 09A4       2508         48      0.932      0.979      0.982      0.649
+             09A4 09BF       2508         47      0.976          1      0.995      0.792
+                  09AD       2508         48      0.959      0.958      0.963      0.686
+             09DF 09C7       2508         48      0.823          1      0.986      0.842
+             09AC 09C3       2508         48          1      0.996      0.995      0.826
+        09A8 09CD 09A6       2508         48          1       0.63      0.958      0.655
+        09A6 09CD 09A7       2508         47       0.82          1       0.99      0.823
+             0995 09C3       2508         47      0.979      0.995      0.995      0.765
+   09A8 09CD 09A4 09C7       2508         46      0.955      0.957      0.976      0.894
+        09AA 09CD 09B0       2508         48      0.913      0.979      0.989      0.799
+             09DF 09BE       2508         48      0.768      0.917       0.92      0.735
+                  09DF       2508         45      0.799      0.511      0.573      0.446
+             09A3 09C7       2508         26      0.436      0.209      0.563      0.455
+   0996 09CD 09AF 09BE       2508         31      0.966      0.968      0.992      0.883
+                  0993       2508         25      0.831          1      0.977      0.971
+             09A6 09BF       2508         29      0.921          1      0.992      0.736
+                  09A7       2508         24      0.966          1      0.995      0.747
+             09AC 09C7       2508         26      0.994      0.962      0.993      0.766
+   09B0 09CD 09AC 09C7       2508         24      0.616          1      0.933      0.748
+                  0997       2508         24      0.989      0.958       0.97      0.679
+        09A8 09CD 09AF       2508         24      0.732          1      0.995      0.871
+                  09CE       2508         23      0.912          1      0.988      0.609
+                  0990       2508         24      0.734          1      0.992      0.877
+             09B0 09C2       2508         24      0.939      0.917      0.893       0.62
+             09A8 09C1       2508         24      0.805          1      0.853      0.669
+             09B7 09C7       2508         24      0.776          1      0.894      0.707
+             09A2 09BE       2508         24      0.834      0.958      0.957      0.804
+             099F 09BF       2508         24      0.982          1      0.995      0.757
+             09A5 09C7       2508         25      0.968       0.96      0.969      0.899
+        09A8 09CD 09A4       2508         25      0.695       0.96      0.936       0.62
+             0995 09BE       2508         25      0.952          1      0.995      0.747
+             099B 09CB       2508         24      0.982          1      0.995      0.842
+             09AD 09BE       2508         25      0.782       0.96      0.946      0.799
+                  09EC       2508         24      0.967          1      0.995      0.859
+             09B9 09BF       2508         24      0.967          1      0.995      0.907
+   09A8 09CD 09A6 09C1       2508         24      0.975          1      0.995      0.834
+                  09E7       2508         24      0.984          1      0.995      0.787
+             09B8 09CC       2508         24      0.975          1      0.995      0.883
+             09B9 09C7       2508         23      0.973          1      0.995      0.827
+             09A4 09C1       2508         22      0.932          1      0.995       0.74
+   09A8 09CD 09A8 09C7       2508         23          1          0        0.9      0.722
+             0995 09BF       2508         24      0.923      0.958      0.992      0.754
+   09B6 09CD 099A 09BF       2508         24      0.621          1      0.906       0.79
+                  098B       2508         22      0.978          1      0.995      0.846
+             099B 09C7       2508         24      0.909          1      0.995      0.886
+        0995 09CD 09AF       2508         24      0.978          1      0.995      0.813
+             09A2 09CB       2508         24      0.981          1      0.995      0.825
+             09AD 09C2       2508         23      0.865          1      0.927      0.777
+        0995 09CD 09B8       2508         24          1      0.949      0.995      0.625
+             09B9 09BE       2508         24          1      0.978      0.995      0.633
+             09B8 09C1       2508         24          1     0.0914      0.897      0.794
+   09AA 09CD 09B2 09BE       2508         24      0.851          1      0.995      0.883
+   09A6 09CD 09B0 09C7       2508         23       0.92      0.957      0.989      0.591
+             09B8 09C8       2508         24      0.807          1      0.995      0.776
+             09A1 09BE       2508         24      0.924          1       0.98      0.882
+                  09AB       2508         22       0.98          1      0.995      0.811
+             09B7 09BE       2508         24      0.928          1      0.995      0.732
+             09B0 09C1       2508         23      0.885      0.913      0.933      0.829
+             09A4 09BE       2508         22      0.861      0.955      0.941      0.659
+                  09B7       2508         24          1      0.643      0.969      0.493
+             09AA 09BF       2508         23      0.977          1      0.995      0.819
+                  09A0       2508         24      0.942          1      0.995      0.641
+             09AC 09C1       2508         24          1          0      0.646      0.425
+   09B0 09CD 09AF 09C7       2508         24      0.941          1      0.992      0.805
+             09A0 09BE       2508         23      0.936          1      0.995      0.717
+   09AE 09CD 09AF 09BE       2508         24      0.981          1      0.995      0.815
+             09B6 09C0       2508         22      0.647          1      0.995      0.909
+             09AB 09C1       2508         24      0.971          1      0.995      0.909
+        09A6 09CD 09B0       2508         25      0.918       0.76       0.85      0.532
+   0995 09CD 09B7 09C7       2508         24      0.896          1      0.995      0.819
+             099A 09C0       2508         24          1      0.733      0.995      0.752
+             09AE 09C2       2508         24      0.442      0.958      0.923      0.847
+                  0988       2508         23      0.947      0.775      0.886      0.641
+             09B8 09C0       2508         24       0.69      0.958      0.945      0.779
+             09B0 09BE       2508         24      0.977          1      0.995      0.849
+             09A5 09C8       2508         23      0.939          1      0.988      0.922
+             09AA 09C3       2508         22      0.957          1      0.995      0.822
+             09B6 09BF       2508         26      0.835          1      0.985      0.861
+             09AC 09C0       2508         23      0.733          1      0.982      0.706
+        09B0 09CD 0998       2508         23          1          0      0.783      0.485
+   0997 09CD 09B0 09C0       2508         23          1          0      0.935      0.864
+   09B7 09CD 09AE 09C7       2508         23          1          0      0.715      0.582
+                  099D       2508         23      0.915       0.94      0.983      0.627
+        09B7 09CD 09A3       2508         22      0.886          1      0.995      0.711
+             09B0 09CB       2508         24      0.978          1      0.995      0.817
+             09A5 09BF       2508         22      0.878          1      0.995      0.705
+   0996 09CD 09B0 09BF       2508         24      0.979          1      0.995      0.872
+             09A7 09BF       2508         23      0.943      0.715      0.963      0.811
+             09AC 09CC       2508         24      0.988          1      0.995      0.975
+             09A8 09BF       2508         20      0.889          1      0.995      0.823
+   0997 09CD 09B0 09CB       2508         22      0.878          1      0.985      0.704
+             09DD 09C7       2508         24      0.981          1      0.995       0.89
+                  09DC       2508         22      0.925          1      0.965      0.579
+   0999 09CD 0997 09CB       2508         24       0.88          1      0.992       0.83
+                  0994       2508         23          1          0      0.209      0.182
+09B0 09CD 09A7 09CD 09AC 09C7       2508         21      0.839          1      0.986      0.847
+   09B0 09CD 09A8 09BE       2508         24          1          0      0.248      0.155
+        0996 09CD 09AF       2508         17      0.825          1       0.99       0.89
+        099F 09CD 099F       2508         21      0.871      0.952       0.96      0.823
+   09A6 09CD 09AC 09C0       2508         24      0.781          1      0.995      0.913
+             0999 09C7       2508         18      0.917      0.944      0.948      0.819
+             0999 09BE       2508         17      0.807      0.941      0.972      0.743
+        09AA 09C7 0981       2508         22      0.938          1      0.973      0.885
+   09B0 09CD 09AE 09C0       2508         21      0.903          1      0.995      0.761
+   09B8 09CD 099F 09BE       2508         15      0.615          1      0.622      0.475
+                  098A       2508         23      0.982      0.957      0.993      0.793
+   09B7 09CD 099F 09BE       2508          9          1          0          0          0
+   09B0 09CD 09AE 09C7       2508          2      0.833          1      0.995      0.821
+   0999 09CD 0997 09BE       2508          5      0.665        0.8        0.8      0.647
+   0999 09CD 0997 09C7       2508          6      0.678      0.356      0.785      0.674
+                  099F       2508          2      0.465          1      0.663      0.663
+   09A7 09CD 09AC 09C7       2508          2          1          0     0.0938      0.075
+             09B2 09C0       2508          1       0.93          1      0.995      0.697
+             0997 09CB       2508          2          1          0          0          0
+   09B0 09CD 09AC 09BE       2508          2          1          0          0          0
+             09A5 09C0       2508          1          0          0          0          0
+        0999 09CD 0997       2508          1          1          0          0          0
+        09AA 09CB 0981       2508          1          1          0      0.995      0.995
+        09A8 09CD 09A7       2508          1          0          0          0          0
+                  0999       2508          1          1          0          0          0
+             099C 09CB       2508          2          0          0          0          0
+             09AD 09C1       2508          2          0          0          0          0
+   09B0 09CD 09A8 09C7       2508          2          1          0      0.375      0.338
+             09AE 09BF       2508          2          0          0          0          0
+             09B8 09C7       2508          1          0          0          0          0
+             099D 09BE       2508          1          0          0          0          0
+             09A7 09C7       2508          1          0          0          0          0
+             09A7 09C8       2508          1          0          0          0          0
+   099F 09CD 099F 09BE       2508          1          0          0          0          0
+             09A6 09C8       2508          1          0          0          0          0
+09B0 09CD 0998 09CD 09AF       2508          1          0          0          0          0
+Speed: 0.2ms preprocess, 3.4ms inference, 0.0ms loss, 0.5ms postprocess per image
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720[0m
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+YOLOv9e summary (fused): 687 layers, 57579173 parameters, 0 gradients, 190.3 GFLOPs
+
+[34m[1mPyTorch:[0m starting from '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 267, 8400) (112.2 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.15.0 opset 17...
+[34m[1mONNX:[0m export success ✅ 4.2s, saved as '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.onnx' (220.1 MB)
+
+Export complete (5.6s)
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights[0m
+Predict:         yolo predict task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.onnx imgsz=640  
+Validate:        yolo val task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e/20240502_T1720/weights/best.onnx imgsz=640 data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_800/data.yaml  
+Visualize:       https://netron.app
+Total training time: 71225.6168012619 seconds
+Finished processing.

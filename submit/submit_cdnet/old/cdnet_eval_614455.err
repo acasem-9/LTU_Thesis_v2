@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/postprocessing/process_test_data_lunarc.py", line 82, in <module>
+    main()
+  File "/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/postprocessing/process_test_data_lunarc.py", line 71, in main
+    model = load_model(weights_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/postprocessing/process_test_data_lunarc.py", line 16, in load_model
+    model = YOLO(weights_path)
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/ultralytics/models/yolo/model.py", line 23, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/ultralytics/engine/model.py", line 151, in __init__
+    self._load(model, task=task)
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/ultralytics/engine/model.py", line 240, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 806, in attempt_load_one_weight
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/ultralytics/nn/tasks.py", line 732, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/torch/serialization.py", line 986, in load
+    with _open_file_like(f, 'rb') as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/torch/serialization.py", line 435, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ca4360sa/.conda/envs/LTU_Thesis_YOLOv8_231227_T1512/lib/python3.11/site-packages/torch/serialization.py", line 416, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../cdnet/cdnet_BSHBD_80-10-10-page_25/yolov9/20240502_T1720/weights/best.pt'

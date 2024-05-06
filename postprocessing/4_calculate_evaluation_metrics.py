@@ -40,22 +40,22 @@ def calculate_metrics(detections, ground_truth):
 
 def main():
     detections_path = input("Enter the path to the detection folder's image_to_word_mapping.txt: ").strip('"')
-    test_path = input("Enter the path to the test folder's image_to_word_mapping.txt: ").strip('"')
+    test_path = input("Enter the path to the test folder's image_to_word_mapping_gt.txt: ").strip('"')
 
     detections = read_file(detections_path)
     ground_truth = read_file(test_path)
 
     wra, cra, wer, cer = calculate_metrics(detections, ground_truth)
     print(f"Word Recognition Accuracy (WRA): {wra:.2%}")
-    print(f"Character Recognition Accuracy (CRA): {cra:.2%}")
     print(f"Word Error Rate (WER): {wer:.2%}")
+    print(f"Character Recognition Accuracy (CRA): {cra:.2%}")
     print(f"Character Error Rate (CER): {cer:.2%}")
 
     output_file_path = Path(detections_path).parent / "evaluation_metrics.txt"
     with open(output_file_path, 'w') as file:
         file.write(f"Word Recognition Accuracy (WRA): {wra:.2%}\n")
-        file.write(f"Character Recognition Accuracy (CRA): {cra:.2%}\n")
         file.write(f"Word Error Rate (WER): {wer:.2%}\n")
+        file.write(f"Character Recognition Accuracy (CRA): {cra:.2%}\n")
         file.write(f"Character Error Rate (CER): {cer:.2%}\n")
 
     print(f"Metrics saved in {output_file_path}")

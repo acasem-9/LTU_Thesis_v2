@@ -1,0 +1,486 @@
+Starting processing work
+Changing directory
+Start work
+Updated the 'path' in /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/data.yaml
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+[34m[1mengine/trainer: [0mtask=detect, mode=train, model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/yolov9e.pt, data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/data.yaml, epochs=250, time=None, patience=15, batch=16, imgsz=640, save=True, save_period=-1, cache=False, device=0, workers=8, project=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e, name=20240502_T1720, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=5.0, translate=0.1, scale=0.5, shear=5.0, perspective=0.0, flipud=0.0, fliplr=0.0, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720
+Overriding model.yaml nc=80 with nc=263
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1         0  ultralytics.nn.modules.block.Silence         []                            
+  1                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  2                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  3                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+  4                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+  5                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+  6                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+  7                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+  8                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+  9                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 10                   1  1      4160  ultralytics.nn.modules.block.CBLinear        [64, [64]]                    
+ 11                   3  1     49344  ultralytics.nn.modules.block.CBLinear        [256, [64, 128]]              
+ 12                   5  1    229824  ultralytics.nn.modules.block.CBLinear        [512, [64, 128, 256]]         
+ 13                   7  1    984000  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512]]   
+ 14                   9  1   2033600  ultralytics.nn.modules.block.CBLinear        [1024, [64, 128, 256, 512, 1024]]
+ 15                   0  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+ 16[10, 11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[0, 0, 0, 0, 0]]             
+ 17                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+ 18[11, 12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[1, 1, 1, 1]]                
+ 19                  -1  1    252160  ultralytics.nn.modules.block.RepNCSPELAN4    [128, 256, 128, 64, 2]        
+ 20                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 21    [12, 13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[2, 2, 2]]                   
+ 22                  -1  1   1004032  ultralytics.nn.modules.block.RepNCSPELAN4    [256, 512, 256, 128, 2]       
+ 23                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 24        [13, 14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[3, 3]]                      
+ 25                  -1  1   4006912  ultralytics.nn.modules.block.RepNCSPELAN4    [512, 1024, 512, 256, 2]      
+ 26                  -1  1   2623488  ultralytics.nn.modules.block.ADown           [1024, 1024]                  
+ 27            [14, -1]  1         0  ultralytics.nn.modules.block.CBFuse          [[4]]                         
+ 28                  -1  1   4269056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 1024, 512, 256, 2]     
+ 29                  -1  1    787968  ultralytics.nn.modules.block.SPPELAN         [1024, 512, 256]              
+ 30                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 31            [-1, 25]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 32                  -1  1   4005888  ultralytics.nn.modules.block.RepNCSPELAN4    [1536, 512, 512, 256, 2]      
+ 33                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 34            [-1, 22]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 35                  -1  1   1069056  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 256, 256, 128, 2]      
+ 36                  -1  1    164352  ultralytics.nn.modules.block.ADown           [256, 256]                    
+ 37            [-1, 32]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 38                  -1  1   3612672  ultralytics.nn.modules.block.RepNCSPELAN4    [768, 512, 512, 256, 2]       
+ 39                  -1  1    656384  ultralytics.nn.modules.block.ADown           [512, 512]                    
+ 40            [-1, 29]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 41                  -1  1  12860416  ultralytics.nn.modules.block.RepNCSPELAN4    [1024, 512, 1024, 512, 2]     
+ 42        [35, 38, 41]  1   5785573  ultralytics.nn.modules.head.Detect           [263, [256, 512, 512]]        
+YOLOv9e summary: 1225 layers, 58347685 parameters, 58347669 gradients, 193.8 GFLOPs
+
+Transferred 1805/1811 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720', view at http://localhost:6006/
+Freezing layer 'model.42.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks with YOLOv8n...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page058a_Word084.tif: ignoring corrupt image/label: negative label values [  -0.058537]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page059a_Word093.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0063]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page088a_Word088.tif: ignoring corrupt image/label: negative label values [  -0.018727]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page119a_Word052.tif: ignoring corrupt image/label: negative label values [  -0.035971]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page119a_Word091.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page147a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.080169]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page150a_Word069.tif: ignoring corrupt image/label: negative label values [ -0.0083102]
+[34m[1mtrain: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/images/Page150a_Word082.tif: ignoring corrupt image/label: negative label values [  -0.040609]
+[34m[1mtrain: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/train/labels.cache
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/images/Page218a_Word063.tif: ignoring corrupt image/label: negative label values [  -0.038462]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/images/Page223a_Word040.tif: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0053]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/images/Page223a_Word054.tif: ignoring corrupt image/label: negative label values [  -0.057692]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/images/Page223a_Word093.tif: ignoring corrupt image/label: negative label values [  -0.025641]
+[34m[1mval: [0mWARNING ⚠️ /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/images/Page225a_Word045.tif: ignoring corrupt image/label: negative label values [  -0.079365]
+[34m[1mval: [0mNew cache created: /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/data/BSHBD_80-10-10-page_100/validation/labels.cache
+Plotting labels to /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m SGD(lr=0.01, momentum=0.9) with parameter groups 298 weight(decay=0.0), 310 weight(decay=0.0005), 309 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 640 train, 640 val
+Using 8 dataloader workers
+Logging results to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720[0m
+Starting training for 250 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.748      0.554      0.655      0.419
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.813      0.651      0.749      0.495
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.718       0.64      0.721       0.44
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.791      0.711      0.797      0.539
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.832      0.712      0.798      0.546
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.828      0.702      0.794      0.544
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.821      0.747      0.817      0.571
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.842       0.72      0.807      0.571
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.844      0.744      0.823      0.564
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.836      0.751      0.819      0.574
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.843      0.739      0.823       0.58
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.846      0.746      0.834      0.596
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.833      0.735      0.817      0.578
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.858      0.744      0.827      0.587
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.864      0.754       0.83      0.606
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.854      0.754      0.829      0.599
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.871      0.732      0.814      0.594
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.872      0.741      0.832      0.605
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.872      0.746      0.828      0.606
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.857      0.754      0.833      0.602
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.86      0.747      0.824      0.606
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.873      0.746       0.82      0.603
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.859      0.768      0.844      0.622
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.874      0.752      0.841      0.627
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.88      0.758      0.846      0.627
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.861       0.77      0.838      0.624
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.889      0.738      0.842      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.882      0.751      0.832      0.623
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.883      0.754      0.845      0.631
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.886      0.748      0.827      0.619
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.888      0.742      0.832      0.622
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.884      0.749      0.834      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.878      0.746      0.825      0.625
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.889      0.747      0.836      0.628
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.873      0.758      0.843      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.865      0.766      0.841      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.867       0.75      0.831      0.621
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.879      0.754      0.845      0.636
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.88       0.75      0.839      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.881      0.755      0.842      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.852       0.77      0.836       0.63
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.876       0.75      0.837      0.634
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.877      0.746      0.835      0.631
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.871      0.758      0.836      0.634
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.848      0.759      0.829      0.626
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.86      0.769      0.842      0.638
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.866      0.766      0.836      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.879       0.75      0.835       0.63
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.858      0.767      0.838      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.875      0.762      0.844      0.638
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.857      0.759      0.837      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.878       0.75      0.844      0.637
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.859      0.761      0.843      0.637
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.887      0.752      0.842      0.634
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.877      0.754      0.843      0.635
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.86      0.762      0.837      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.87      0.761      0.838      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676       0.88      0.755      0.838      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.891      0.751       0.84      0.636
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.889      0.753       0.84      0.635
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.892      0.749       0.84      0.634
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.891       0.75      0.837      0.633
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.892       0.75      0.837      0.632
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.865      0.773      0.836      0.631
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+                   all       2508       8676      0.887      0.757      0.838      0.634
+[34m[1mEarlyStopping: [0mTraining stopped early as no improvement observed in last 15 epochs. Best results observed at epoch 50, best model saved as best.pt.
+To update EarlyStopping(patience=15) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+65 epochs completed in 5.961 hours.
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/last.pt, 117.7MB
+Optimizer stripped from /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.pt, 117.7MB
+
+Validating /lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.pt...
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+YOLOv9e summary (fused): 687 layers, 57579173 parameters, 0 gradients, 190.3 GFLOPs
+                   all       2508       8676      0.874      0.762      0.844      0.638
+                  09B0       2508        627      0.929      0.949      0.974      0.689
+                  002C       2508        377      0.958      0.859       0.93      0.479
+                  09B8       2508        310      0.962      0.654      0.855      0.559
+                  09A8       2508        282      0.942      0.617      0.891      0.546
+                  0964       2508        205      0.942      0.872      0.949      0.451
+                  09AC       2508        195      0.934      0.574      0.893      0.574
+             09AC 09BE       2508        188       0.98      0.846      0.964      0.682
+                  002D       2508        222      0.856      0.751      0.766      0.259
+                  098F       2508        168      0.981      0.906      0.978      0.734
+             09A8 09BE       2508        146          1     0.0477      0.764      0.602
+                  0986       2508        140      0.991       0.78      0.976      0.781
+                  09A6       2508        142      0.934      0.794      0.924      0.559
+                  0995       2508        121      0.966      0.944      0.984      0.628
+                  099C       2508        120          1      0.909      0.983      0.725
+                  09AE       2508        117      0.755      0.778      0.854      0.535
+                  09AA       2508        122      0.927      0.934      0.956      0.624
+                  09B2       2508         96       0.92      0.958      0.956      0.627
+                  0982       2508         97      0.989      0.959      0.976       0.51
+                  09A4       2508         95      0.964        0.8       0.93      0.589
+             09AE 09BE       2508         93      0.851      0.801        0.9      0.674
+             0995 09C7       2508         95      0.956      0.989      0.985      0.854
+             099C 09BE       2508         93      0.966      0.925      0.975      0.637
+   0995 09CD 09B7 09BF       2508         96          1      0.755      0.957      0.731
+             09AA 09C2       2508         91      0.941      0.989      0.948      0.694
+                  0989       2508         70      0.786      0.999      0.974       0.82
+             09AE 09C7       2508         72       0.94      0.986      0.992      0.773
+   09AA 09CD 09B0 09BE       2508         71      0.972      0.986      0.992      0.742
+             09AE 09C1       2508         72       0.95      0.764      0.937      0.588
+             09A6 09C7       2508         72      0.996          1      0.995      0.738
+                  0998       2508         71      0.926       0.93      0.962       0.72
+                  0985       2508         72      0.853          1      0.986      0.786
+             09A4 09C7       2508         73      0.988          1      0.995      0.849
+             09AA 09BE       2508         71      0.984      0.881      0.967      0.607
+                  09B6       2508         72      0.982      0.681      0.891      0.627
+             09B0 09C7       2508         73      0.923      0.973      0.988      0.893
+                  09B9       2508         72       0.97      0.972      0.993      0.595
+             09B2 09BF       2508         70          1      0.983      0.995      0.779
+             09A5 09BE       2508         71      0.938          1      0.994      0.819
+        09B0 09CD 09AC       2508         67      0.923      0.711       0.84      0.482
+             09A8 09C7       2508         70      0.757      0.758       0.79      0.629
+                  09A3       2508         46      0.697      0.522      0.666      0.409
+             09AA 09C1       2508         51          1      0.873      0.966      0.679
+                  0987       2508         51      0.972      0.961      0.982      0.857
+             09B6 09C7       2508         48          1      0.992      0.995      0.839
+             09B8 09BE       2508         48      0.776      0.938      0.944      0.719
+             09B2 09BE       2508         48      0.958      0.946      0.949      0.657
+             0996 09BE       2508         48      0.941       0.99      0.994        0.7
+             09A6 09C0       2508         45          1      0.156      0.744      0.558
+             0995 09CB       2508         48      0.994          1      0.995      0.798
+             09B2 09C7       2508         49      0.952       0.98       0.99       0.68
+        09A4 09CD 09A4       2508         48      0.921      0.958      0.982      0.584
+             09A4 09BF       2508         47      0.993          1      0.995      0.741
+                  09AD       2508         48      0.955      0.884      0.933      0.572
+             09DF 09C7       2508         48      0.859          1      0.986      0.829
+             09AC 09C3       2508         48      0.984      0.979      0.995      0.813
+        09A8 09CD 09A6       2508         48      0.986      0.521      0.874      0.499
+        09A6 09CD 09A7       2508         47      0.883      0.957      0.975      0.697
+             0995 09C3       2508         47      0.992          1      0.995      0.675
+   09A8 09CD 09A4 09C7       2508         46      0.926      0.978      0.983      0.873
+        09AA 09CD 09B0       2508         48      0.979      0.965       0.99      0.784
+             09DF 09BE       2508         48      0.841      0.521      0.823      0.618
+                  09DF       2508         45      0.874      0.511      0.698       0.55
+             09A3 09C7       2508         26      0.746      0.227      0.471      0.384
+   0996 09CD 09AF 09BE       2508         31      0.906          1      0.993      0.832
+                  0993       2508         25      0.912       0.96      0.963      0.936
+             09A6 09BF       2508         29      0.946      0.966      0.978      0.698
+                  09A7       2508         24      0.982          1      0.995      0.739
+             09AC 09C7       2508         26          1      0.942      0.981      0.699
+   09B0 09CD 09AC 09C7       2508         24      0.661      0.975      0.939      0.747
+                  0997       2508         24      0.957      0.925      0.964      0.655
+        09A8 09CD 09AF       2508         24      0.769          1      0.992      0.873
+                  09CE       2508         23      0.953          1      0.979      0.514
+                  0990       2508         24      0.872          1      0.992      0.848
+             09B0 09C2       2508         24      0.928      0.917      0.904      0.604
+             09A8 09C1       2508         24      0.864          1      0.959      0.725
+             09B7 09C7       2508         24      0.824          1      0.914      0.694
+             09A2 09BE       2508         24      0.961      0.958      0.958      0.818
+             099F 09BF       2508         24       0.98          1      0.995      0.761
+             09A5 09C7       2508         25      0.948       0.96      0.972      0.885
+        09A8 09CD 09A4       2508         25      0.857       0.96      0.957      0.598
+             0995 09BE       2508         25       0.94          1      0.993      0.722
+             099B 09CB       2508         24      0.986          1      0.995      0.835
+             09AD 09BE       2508         25      0.749       0.96      0.945      0.792
+                  09EC       2508         24      0.992          1      0.995      0.863
+             09B9 09BF       2508         24      0.971          1      0.995       0.92
+   09A8 09CD 09A6 09C1       2508         24      0.979          1      0.995      0.804
+                  09E7       2508         24      0.977          1      0.995       0.79
+             09B8 09CC       2508         24      0.945          1      0.995      0.853
+             09B9 09C7       2508         23      0.984          1      0.995      0.796
+             09A4 09C1       2508         22      0.966          1      0.995      0.738
+   09A8 09CD 09A8 09C7       2508         23          1          0      0.862      0.687
+             0995 09BF       2508         24       0.99          1      0.995      0.703
+   09B6 09CD 099A 09BF       2508         24      0.714          1      0.992      0.814
+                  098B       2508         22      0.937          1      0.995       0.86
+             099B 09C7       2508         24      0.944          1      0.995      0.875
+        0995 09CD 09AF       2508         24      0.973      0.958      0.993      0.808
+             09A2 09CB       2508         24      0.981          1      0.995      0.788
+             09AD 09C2       2508         23        0.9          1      0.961      0.737
+        0995 09CD 09B8       2508         24          1      0.989      0.995      0.597
+             09B9 09BE       2508         24          1      0.969      0.995      0.638
+             09B8 09C1       2508         24          1      0.119      0.834      0.731
+   09AA 09CD 09B2 09BE       2508         24      0.801          1      0.982      0.863
+   09A6 09CD 09B0 09C7       2508         23      0.954      0.907      0.961       0.52
+             09B8 09C8       2508         24      0.988          1      0.995      0.726
+             09A1 09BE       2508         24      0.978          1      0.995      0.875
+                  09AB       2508         22      0.983          1      0.995      0.772
+             09B7 09BE       2508         24      0.876          1      0.954      0.698
+             09B0 09C1       2508         23      0.809      0.922      0.917      0.772
+             09A4 09BE       2508         22      0.938          1      0.969      0.598
+                  09B7       2508         24          1          0     0.0532     0.0266
+             09AA 09BF       2508         23      0.962      0.957      0.993      0.786
+                  09A0       2508         24      0.987          1      0.995      0.601
+             09AC 09C1       2508         24          1          0      0.758      0.491
+   09B0 09CD 09AF 09C7       2508         24      0.954          1      0.989      0.748
+             09A0 09BE       2508         23          1      0.949       0.99      0.687
+   09AE 09CD 09AF 09BE       2508         24          1       0.99      0.995      0.768
+             09B6 09C0       2508         22      0.733          1      0.995      0.905
+             09AB 09C1       2508         24      0.974          1      0.995      0.895
+        09A6 09CD 09B0       2508         25      0.898       0.72      0.786      0.473
+   0995 09CD 09B7 09C7       2508         24      0.779      0.958      0.958      0.774
+             099A 09C0       2508         24          1      0.325      0.995      0.712
+             09AE 09C2       2508         24      0.732      0.958      0.944       0.83
+                  0988       2508         23      0.918      0.696      0.848      0.624
+             09B8 09C0       2508         24      0.928      0.958      0.956      0.749
+             09B0 09BE       2508         24      0.956          1      0.995      0.802
+             09A5 09C8       2508         23      0.935          1      0.995      0.915
+             09AA 09C3       2508         22      0.956          1      0.995      0.796
+             09B6 09BF       2508         26      0.943      0.962      0.968      0.813
+             09AC 09C0       2508         23      0.915          1      0.983      0.655
+        09B0 09CD 0998       2508         23          1          0       0.83      0.421
+   0997 09CD 09B0 09C0       2508         23          1          0      0.975      0.899
+   09B7 09CD 09AE 09C7       2508         23          1          0      0.663      0.523
+                  099D       2508         23      0.924      0.913       0.98       0.61
+        09B7 09CD 09A3       2508         22      0.893          1      0.995      0.694
+             09B0 09CB       2508         24      0.944          1      0.995      0.778
+             09A5 09BF       2508         22      0.948          1      0.995      0.691
+   0996 09CD 09B0 09BF       2508         24      0.978          1      0.995      0.823
+             09A7 09BF       2508         23          1          0      0.746      0.499
+             09AC 09CC       2508         24      0.985      0.958      0.991       0.92
+             09A8 09BF       2508         20      0.959          1      0.995      0.771
+   0997 09CD 09B0 09CB       2508         22      0.933      0.909      0.942      0.655
+             09DD 09C7       2508         24      0.916          1      0.995      0.894
+                  09DC       2508         22      0.947          1      0.982      0.572
+   0999 09CD 0997 09CB       2508         24      0.966          1      0.995      0.814
+                  0994       2508         23          1          0      0.409      0.333
+09B0 09CD 09A7 09CD 09AC 09C7       2508         21      0.833          1      0.948      0.799
+   09B0 09CD 09A8 09BE       2508         24          1          0      0.544      0.342
+        0996 09CD 09AF       2508         17      0.908          1      0.995      0.891
+        099F 09CD 099F       2508         21      0.976      0.952      0.977      0.799
+   09A6 09CD 09AC 09C0       2508         24       0.79          1      0.993      0.888
+             0999 09C7       2508         18          1      0.923       0.95      0.829
+             0999 09BE       2508         17      0.767      0.765      0.943      0.679
+        09AA 09C7 0981       2508         22      0.937          1      0.993       0.91
+   09B0 09CD 09AE 09C0       2508         21       0.98          1      0.995       0.76
+   09B8 09CD 099F 09BE       2508         15      0.619      0.977      0.779      0.558
+                  098A       2508         23          1      0.949      0.995      0.814
+   09B7 09CD 099F 09BE       2508          9          1          0          0          0
+   09B0 09CD 09AE 09C7       2508          2      0.853          1      0.995      0.895
+   0999 09CD 0997 09BE       2508          5      0.705      0.961      0.831      0.661
+   0999 09CD 0997 09C7       2508          6      0.824      0.333      0.826      0.658
+                  099F       2508          2      0.462          1      0.995      0.822
+   09A7 09CD 09AC 09C7       2508          2      0.441        0.5      0.502      0.402
+             09B2 09C0       2508          1       0.85          1      0.995      0.895
+             0997 09CB       2508          2          1          0      0.509      0.305
+   09B0 09CD 09AC 09BE       2508          2          1          0          0          0
+             09A5 09C0       2508          1          0          0          0          0
+        0999 09CD 0997       2508          1          1          0          0          0
+        09AA 09CB 0981       2508          1          1          0      0.995      0.995
+        09A8 09CD 09A7       2508          1          1          0          0          0
+                  0999       2508          1          1          0      0.142     0.0853
+             099C 09CB       2508          2          1          0          0          0
+             09AD 09C1       2508          2          0          0          0          0
+   09B0 09CD 09A8 09C7       2508          2          0          0          0          0
+             09AE 09BF       2508          2          0          0          0          0
+             09B8 09C7       2508          1          0          0          0          0
+             099D 09BE       2508          1          1          0          0          0
+             09A7 09C7       2508          1          0          0          0          0
+             09A7 09C8       2508          1          0          0          0          0
+   099F 09CD 099F 09BE       2508          1          0          0          0          0
+             09A6 09C8       2508          1          0          0          0          0
+09B0 09CD 0998 09CD 09AF       2508          1          0          0          0          0
+Speed: 0.2ms preprocess, 3.4ms inference, 0.0ms loss, 0.5ms postprocess per image
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720[0m
+Ultralytics YOLOv8.2.5 🚀 Python-3.11.4 torch-2.1.0+cu121 CUDA:0 (NVIDIA A100 80GB PCIe, 81038MiB)
+YOLOv9e summary (fused): 687 layers, 57579173 parameters, 0 gradients, 190.3 GFLOPs
+
+[34m[1mPyTorch:[0m starting from '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.pt' with input shape (1, 3, 640, 640) BCHW and output shape(s) (1, 267, 8400) (112.2 MB)
+
+[34m[1mONNX:[0m starting export with onnx 1.15.0 opset 17...
+[34m[1mONNX:[0m export success ✅ 3.6s, saved as '/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.onnx' (220.1 MB)
+
+Export complete (4.6s)
+Results saved to [1m/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights[0m
+Predict:         yolo predict task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.onnx imgsz=640  
+Validate:        yolo val task=detect model=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e/20240502_T1720/weights/best.onnx imgsz=640 data=/lunarc/nobackup/projects/lu2023-17-41/carl/LTU/LTU_Thesis_v2/cdnet/cdnet_BSHBD_80-10-10-page_100/data.yaml  
+Visualize:       https://netron.app
+Total training time: 21546.775991678238 seconds
+Finished processing.

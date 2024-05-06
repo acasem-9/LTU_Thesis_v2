@@ -29,7 +29,21 @@ submit/submit_dnet/old/
 desktop.ini
 legacy
 
-cdnet/cdnet_dataset_80-10-10-page_full-2019_unconstrained_single/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_full/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_full/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_25/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_25/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_50/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_50/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_100/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_100/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_200/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_200/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_400/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_400/data.yaml 
+cdnet/cdnet_BSHBD_80-10-10-page_800/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_800/data.yaml 
+
 
 cnet/cnet_dataset_80-10-10-page_full-2019/yolov8n
 cnet/cnet_dataset_80-10-10-page_full-2019/yolov8m

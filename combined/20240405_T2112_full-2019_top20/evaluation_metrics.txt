@@ -1,4 +1,0 @@
-Word Recognition Accuracy (WRA): 95.00%
-Character Recognition Accuracy (CRA): 97.06%
-Word Error Rate (WER): 5.00%
-Character Error Rate (CER): 2.94%

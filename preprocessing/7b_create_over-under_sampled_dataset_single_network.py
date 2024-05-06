@@ -15,7 +15,7 @@ import re
 from collections import defaultdict
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from config_local import SEPARATED_C_DATA_DIR, SEPARATED_D_DATA_DIR
+#from config_local import SEPARATED_C_DATA_DIR, SEPARATED_D_DATA_DIR
 
 def remove_quotes(path):
     return re.sub(r'^[\'\"]|[\'\"]$', '', path)
@@ -111,7 +111,7 @@ def main():
         return
 
     min_obs = int(input("Enter the minimum number of observations per object class: "))
-    raw_data_path = input("Enter the path to the raw/base dataset to make the over/under sampling from: ").strip('"')
+    raw_data_path = input("Enter the path to the raw/base dataset to make the over/under sampling from (e.g. ): ").strip('"')
     output_path = input("Enter the output path (parent folder) for the new sampled dataset: ").strip('"')
     #create_new_dataset_for_separated_folders([SEPARATED_C_DATA_DIR, SEPARATED_D_DATA_DIR], min_obs)
     sample_folder(raw_data_path, min_obs, output_path)
