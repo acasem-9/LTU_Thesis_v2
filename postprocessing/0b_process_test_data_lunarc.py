@@ -48,7 +48,7 @@ def process_images(model, images_path, detection_labels_path, detection_images_p
 def main():
     # User input for paths
     version = 'full'
-    project_folder = os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), f'cdnet/cdnet_BSHBD_80-10-10-page_{version}/yolov9e/20240430_T19192')
+    project_folder = os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), f'cdnet/cdnet_BSHBD_80-10-10-page_{version}/yolov9c/20240510_T1922_B16C2')
     test_data_folder = os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), f'data/BSHBD_80-10-10-page_{version}/test')
     save_images = 'yes'
     conf_level = 0.4

@@ -1,23 +1,20 @@
 #!/bin/bash
 
 # Job time (hh:mm:ss):
-#SBATCH -t 00:10:00
+#SBATCH -t 15:00:00
 
 # Project specification:
 #SBATCH -A lu2023-2-80
-
-# High Prio. Test jobs (remove for full run): 
-#SBATCH --qos=test
 
 # GPU access:
 #SBATCH -p gpua100
 
 # Naming of job:
-#SBATCH -J cdnet_eval
+#SBATCH -J cdnet_full-BSHBD-128_train
 
 # Job output:
-#SBATCH -o cdnet_eval_%j.out
-#SBATCH -e cdnet_eval_%j.err
+#SBATCH -o cdnet_full-BSHBD-128_train_%j.out
+#SBATCH -e cdnet_full-BSHBD-128_train_%j.err
 
 # Job notification:
 #SBATCH --mail-user=ca4360sa-s@student.lu.se
@@ -46,9 +43,9 @@ echo "Starting processing work"
 
 # Change directory:
 echo "Changing directory"
-cd ../../postprocessing
+cd ../../cdnet
 
 # Run the work tasks:
 echo "Start work"
-python process_test_data_lunarc.py
+python train_cdnet_BSHBD_80-10-10_full_128.py
 echo "Finished processing."

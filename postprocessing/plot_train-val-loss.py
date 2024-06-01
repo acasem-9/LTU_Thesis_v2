@@ -13,7 +13,7 @@ def plot_losses(csv_path):
         return
 
     # Set the style of seaborn
-    sns.set(style="darkgrid")
+    sns.set_theme(style="darkgrid")
 
     # Create a figure and a set of subplots
     plt.figure(figsize=(10, 6))
@@ -25,7 +25,7 @@ def plot_losses(csv_path):
     sns.lineplot(x='                  epoch', y='           val/cls_loss', data=data, label='Validation Loss', color='orange')
 
     # Adding title and labels
-    plt.title('Training and Validation Loss per Epoch')
+    plt.title('20240502_D200') # Training and Validation Loss per Epoch')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
     plt.legend()
@@ -36,6 +36,7 @@ def plot_losses(csv_path):
 def main():
     # User input for the CSV file path
     csv_path = input("Enter the path to the CSV file: ").strip('"')
+
     plot_losses(csv_path)
 
 if __name__ == "__main__":

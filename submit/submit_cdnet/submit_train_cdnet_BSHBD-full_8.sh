@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Job time (hh:mm:ss):
-#SBATCH -t 15:00:00
+#SBATCH -t 30:00:00
 
 # Project specification:
 #SBATCH -A lu2023-2-80

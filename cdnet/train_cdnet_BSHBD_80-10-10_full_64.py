@@ -83,11 +83,11 @@ def main():
     # Model parameters
     data_yaml = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cdnet_BSHBD_80-10-10-page_full', 'data.yaml'))
     project=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cdnet_BSHBD_80-10-10-page_full','yolov9e'))
-    name='20240507_T1922_B8'
+    name='20240510_T1922_B64'
     yolo_weights =  os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'yolov9e.pt')
     #os.path.join(os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')), 'pretrained', 'yolov8m.pt')
     epochs=250
-    batch=8
+    batch=64
     patience=15
     device=0
     exist_ok=False

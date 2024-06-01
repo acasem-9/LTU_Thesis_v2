@@ -17,6 +17,9 @@ data/raw/**
 submit/submit_cdnet/*out
 submit/submit_cdnet/*err
 
+submit/submit_cdnet/old/*out
+submit/submit_cdnet/old/*err
+
 submit/submit_cnet/*out
 submit/submit_cnet/*err
 
@@ -30,6 +33,7 @@ desktop.ini
 legacy
 
 cdnet/cdnet_BSHBD_80-10-10-page_full/yolov9e
+cdnet/cdnet_BSHBD_80-10-10-page_full/yolov9c
 cdnet/cdnet_BSHBD_80-10-10-page_full/data.yaml 
 cdnet/cdnet_BSHBD_80-10-10-page_25/yolov9e
 cdnet/cdnet_BSHBD_80-10-10-page_25/data.yaml 
